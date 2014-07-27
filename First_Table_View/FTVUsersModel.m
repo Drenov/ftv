@@ -1,0 +1,99 @@
+//
+//  FTVModels.m
+//  First_Table_View
+//
+//  Created by Mykhailov Andrii on 4/17/14.
+//  Copyright (c) 2014 Mykhailov Andrii. All rights reserved.
+//
+
+#import "FTVUsersModel.h"
+#import "FTVUser.h"
+
+@interface FTVUsersModel()
+@property (nonatomic, retain)       NSMutableArray      *mutableObjects;
+
+@end
+
+@implementation FTVUsersModel
+
+@dynamic users;
+
+#pragma mark
+#pragma mark Initializations and Deallocations
+
+- (void)dealloc {
+    self.mutableObjects = nil;
+	
+	[super dealloc];
+}
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        self.mutableObjects = [NSMutableArray array];
+    }
+	
+    return self;
+}
+
+#pragma mark -
+#pragma mark Accessors
+
+- (NSArray *)users {
+	return [[self.mutableObjects copy] autorelease];
+}
+
+#pragma mark -
+#pragma mark Public Methods
+
+- (void)addObject:(FTVUser *)user {
+    id syncObject = self.mutableObjects;
+	@synchronized(syncObject) {
+		[syncObject addObject:user];
+	}
+}
+
+- (void)removeAllObjects {
+    id syncObject = self.mutableObjects;
+	@synchronized(syncObject) {
+		[syncObject removeAllObjects];
+	}
+}
+
+- (void)removeObjectAtIndex:(NSInteger)index {
+	id syncObject = self.mutableObjects;
+	@synchronized(syncObject) {
+		[syncObject removeObjectAtIndex:index];
+	}
+}
+
+- (void)moveObjectAtIndex:(NSInteger)fromIndex
+				  toIndex:(NSInteger)toIndex
+{
+	if (fromIndex == toIndex) {
+		return;
+	}
+	
+	id syncObject = self.mutableObjects;
+	@synchronized(syncObject) {
+		id movingObject = [[syncObject objectAtIndex:fromIndex] retain];
+		[syncObject removeObjectAtIndex:fromIndex];
+		[syncObject insertObject:movingObject atIndex:toIndex];
+		[movingObject release];
+	}
+}
+
+- (FTVUser *)objectAtIndex:(NSInteger)index {
+    return [self.users objectAtIndex:index];
+}
+
+#pragma mark-
+#pragma mark IDPModel
+
+- (void)cleanup {
+	for (id object in self.users) {
+		[object dump];
+	}
+}
+
+@end
