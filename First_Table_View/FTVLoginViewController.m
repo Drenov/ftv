@@ -149,8 +149,9 @@ static	NSString *const	kFTVLoadingErrorMessage = @"No saved data found. Try agai
     if (theModel == self.loadContext || theModel == self.readContext) {
         NSLog(@"<<Users did load>>");
         FTVLoginView *view = self.customView;
-        [view.activityIndicator stopAnimating];
-        view.showFriendsEnabled = YES;
+//        [view.activityIndicator stopAnimating];
+//        view.showFriendsEnabled = YES;
+        view.loginState = kFTVLoginSucceed;
         self.usersModel = ((FTVUsersContext *)theModel).object;
         self.loadContext = nil;
         self.readContext = nil;

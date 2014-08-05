@@ -10,6 +10,11 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "FTVView.h"
 
+typedef enum {
+    kFTVLoginFailed,
+    kFTVLoginSucceed
+} kFTVLoginState;
+
 @interface FTVLoginView : FTVView
 @property (nonatomic, retain)   IBOutlet    FBLoginView                 *loginView;
 @property (nonatomic, retain)   IBOutlet    FBProfilePictureView        *profilePictureView;
@@ -18,6 +23,7 @@
 @property (nonatomic, retain)   IBOutlet    UIButton                    *showFriendsButton;
 @property (nonatomic, retain)   IBOutlet    UIActivityIndicatorView     *activityIndicator;
 
-@property (nonatomic, assign)       BOOL        showFriendsEnabled;
+@property (nonatomic, assign)       kFTVLoginState          loginState;
+//@property (nonatomic, assign)       BOOL        showFriendsEnabled;
 
 @end

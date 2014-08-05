@@ -10,8 +10,6 @@
 
 @implementation FTVLoginView
 
-@synthesize showFriendsEnabled = _showFriendsEnabled;
-
 #pragma mark
 #pragma mark Initializations and Deallocationsb
 
@@ -28,9 +26,26 @@
 #pragma mark -
 #pragma mark Accessors
 
-- (void)setShowFriendsEnabled:(BOOL)showFriendsEnabled {
-    _showFriendsEnabled = showFriendsEnabled;
-    self.showFriendsButton.enabled = showFriendsEnabled;
+//- (void)setShowFriendsEnabled:(BOOL)showFriendsEnabled {
+//    _showFriendsEnabled = showFriendsEnabled;
+//    self.showFriendsButton.enabled = showFriendsEnabled;
+//}
+
+- (void)setLoginState:(kFTVLoginState)loginState {
+    _loginState = loginState;
+    
+    switch (loginState) {
+        case kFTVLoginFailed:
+            self.showFriendsButton.enabled = false;
+            break;
+        case kFTVLoginSucceed:
+            self.showFriendsButton.enabled = true;
+            self.loginLabel.text = @"Please login";
+            break;
+        default:
+            break;
+    }
+    [self.activityIndicator stopAnimating];
 }
 
 #pragma mark-
@@ -41,8 +56,7 @@
     if (model) {
         self.loginLabel.text = [NSString stringWithFormat:@"Logged as %@", model.name];
     } else {
-        self.showFriendsEnabled = NO;
-        self.loginLabel.text = @"Please login";
+        self.loginState = kFTVLoginFailed;
     }
 }
 
