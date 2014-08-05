@@ -35,7 +35,7 @@
     self.name.text = name;
     self.city.text = user.city;
     self.country.text = user.country;
-    FTVImageModel *picture = user.largePicture;
+    FTVImageModel *picture = user.picture;
     if (!picture) {
         picture = user.previewPicture;
     }

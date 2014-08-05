@@ -34,7 +34,7 @@ static	NSString *const	kFTVFBGraphUserHometownSeparator = @", ";
     IDPBufferArray *hometownComponents = [IDPBufferArray arrayWithArray:components];
     user.city = [hometownComponents pop];
     user.country = [hometownComponents componentsJoinedByString:kFTVFBGraphUserHometownSeparator];
-    user.largePicturePath = data kFTVFBGraphUserPictureUrlPath;
+    user.picturePath = data kFTVFBGraphUserPictureUrlPath;
     [user saveManagedObject];
     NSLog(@"User %@ details filled", user.firstName);
 }

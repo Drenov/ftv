@@ -12,7 +12,7 @@
 
 @interface FTVCoreUser (FTVExtension)
 @property (nonatomic, readonly)     FTVImageModel       *previewPicture;
-@property (nonatomic, readonly)     FTVImageModel       *largePicture;
+@property (nonatomic, readonly)     FTVImageModel       *picture;
 
 + (FTVCoreUser *)userWithId:(NSString *)userId;
 

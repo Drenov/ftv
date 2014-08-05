@@ -15,7 +15,7 @@ static NSString *const kFTVUserIdPredicateFormat = @"userID = %@";
 @implementation FTVCoreUser (FTVExtension)
 
 @dynamic previewPicture;
-@dynamic largePicture;
+@dynamic picture;
 
 #pragma mark -
 #pragma mark Class Methods
@@ -45,8 +45,8 @@ static NSString *const kFTVUserIdPredicateFormat = @"userID = %@";
     return image;
 }
 
-- (FTVImageModel *)largePicture {
-    id path = self.largePicturePath;
+- (FTVImageModel *)picture {
+    id path = self.picturePath;
     FTVImageModel *image = [FTVImageModel imageModelWithPath:path];
     NSLog(@"Large image request");
     
