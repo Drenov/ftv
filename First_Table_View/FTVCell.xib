@@ -29,7 +29,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <connections>
-                            <outlet property="activityIndicatorView" destination="iX2-ZX-UtH" id="Z7g-p3-Nmr"/>
+                            <outlet property="activityIndicator" destination="iX2-ZX-UtH" id="1Q0-32-WHg"/>
                             <outlet property="imageView" destination="Uir-2t-EUB" id="ek2-DR-kFw"/>
                         </connections>
                     </view>

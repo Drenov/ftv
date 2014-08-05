@@ -22,7 +22,7 @@
 
 - (void)dealloc {
     self.imageView = nil;
-	self.activityIndicatorView = nil;
+	self.activityIndicator = nil;
     self.imageModel = nil;
     
     [super dealloc];
@@ -44,7 +44,7 @@
 #pragma mark Public Methods
 
 - (void)fillWithModel:(FTVImageModel *)model {
-    [self.activityIndicatorView startAnimating];
+    [self.activityIndicator startAnimating];
     self.imageView.image = nil;
     self.imageModel = model;
 }
@@ -56,21 +56,21 @@
     if (theModel == self.imageModel) {
         id image = theModel.image;
         self.imageView.image = image;
-        [self.activityIndicatorView stopAnimating];
+        [self.activityIndicator stopAnimating];
         NSLog(@"Image %@ did load, updating view", image);
     }
 }
 
 - (void)modelDidFailToLoad:(FTVImageModel *)theModel {
     if (theModel == self.imageModel) {
-        self.pictureView.image = theModel.image;
-        [self.activityIndicatorView stopAnimating];
+        self.imageView.image = theModel.image;
+        [self.activityIndicator stopAnimating];
         NSLog(@"Object %@ failed to load image", theModel);
     }
 }
 - (void)modelDidCancelLoading:(id)theModel {
     if (theModel == self.imageModel) {
-        [self.activityIndicatorView stopAnimating];
+        [self.activityIndicator stopAnimating];
     }
 }
 
