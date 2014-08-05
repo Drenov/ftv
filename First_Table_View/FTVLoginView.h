@@ -16,10 +16,8 @@
 
 @property (nonatomic, retain)   IBOutlet    UILabel                     *label;
 @property (nonatomic, retain)   IBOutlet    UIButton                    *showFriends;
-@property (nonatomic, retain)   IBOutlet    UIButton                    *showCancel;
 @property (nonatomic, retain)   IBOutlet    UIActivityIndicatorView     *indicator;
 
 @property (nonatomic, assign)       BOOL        showFriendsEnabled;
-@property (nonatomic, assign)       BOOL        showCancelHidden;
 
 @end

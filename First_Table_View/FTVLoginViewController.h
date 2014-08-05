@@ -14,6 +14,5 @@
 @interface FTVLoginViewController : FTVViewController <IDPModelObserver, FBLoginViewDelegate>
 
 - (IBAction)onShowFriends:(id)sender;
-- (IBAction)onCancel:(id)sender;
 
 @end

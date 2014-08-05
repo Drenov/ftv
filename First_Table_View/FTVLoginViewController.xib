@@ -44,31 +44,11 @@
                         <action selector="onShowFriends:" destination="-1" eventType="touchUpInside" id="gUC-u8-lEM"/>
                     </connections>
                 </button>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ah-OY-QWm">
-                    <rect key="frame" x="245" y="332" width="63" height="51"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Cancel">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="onCancel:" destination="-1" eventType="touchUpInside" id="bbD-Xe-rZi"/>
-                    </connections>
-                </button>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="GZB-WI-4vi">
                     <rect key="frame" x="142" y="393" width="37" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </activityIndicatorView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJ8-hG-ig5">
-                    <rect key="frame" x="31" y="342" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="onTest:" destination="-1" eventType="touchUpInside" id="k9S-mq-68b"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -78,7 +58,6 @@
                 <outlet property="label" destination="Ceo-Ba-Yha" id="emU-Lb-lOU"/>
                 <outlet property="loginView" destination="M6V-TQ-QRS" id="OKy-2R-x5j"/>
                 <outlet property="profilePictureView" destination="Sjo-Qg-AwM" id="EVP-si-NoZ"/>
-                <outlet property="showCancel" destination="5ah-OY-QWm" id="CT6-iW-rxE"/>
                 <outlet property="showFriends" destination="mVm-QV-zEK" id="HPJ-UI-P2G"/>
             </connections>
         </view>

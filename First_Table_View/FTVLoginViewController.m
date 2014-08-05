@@ -106,11 +106,6 @@ static	NSString *const	kFTVLoadingErrorMessage = @"No saved data found. Try agai
     [self.navigationController pushViewController:controller animated:YES];
 }
 
-- (IBAction)onCancel:(id)sender {
-    NSLog(@"Cancel pressed");
-    self.loadContext = nil;
-}
-
 #pragma mark -
 #pragma mark Private Methods
 
@@ -156,7 +151,6 @@ static	NSString *const	kFTVLoadingErrorMessage = @"No saved data found. Try agai
         FTVLoginView *view = self.customView;
         [view.indicator stopAnimating];
         view.showFriendsEnabled = YES;
-        view.showCancelHidden = YES;
         self.usersModel = ((FTVUsersContext *)theModel).object;
         self.loadContext = nil;
         self.readContext = nil;
@@ -167,7 +161,6 @@ static	NSString *const	kFTVLoadingErrorMessage = @"No saved data found. Try agai
     FTVLoginView *view = self.customView;
     if (theModel == self.loadContext) {
         NSLog(@"Users load failed, reading saved data");
-        view.showCancelHidden = YES;
         self.loadContext = nil;
         FTVUsersReadContext *readContext = [FTVUsersReadContext contextWithObject:self.usersModel];
         self.readContext = readContext;
@@ -186,7 +179,6 @@ static	NSString *const	kFTVLoadingErrorMessage = @"No saved data found. Try agai
     if (theModel == self.loadContext) {
         NSLog(@"<<Users loading cancelled>>");
         FTVLoginView *view = self.customView;
-        view.showCancelHidden = YES;
         [view.indicator stopAnimating];
         self.loadContext = nil;
     }

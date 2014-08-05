@@ -20,8 +20,7 @@
     self.profilePictureView = nil;
     self.label = nil;
     self.showFriends = nil;
-    self.showCancel = nil;
-    self.indicator = nil; 
+    self.indicator = nil;
 
     [super dealloc];
 }
@@ -32,11 +31,6 @@
 - (void)setShowFriendsEnabled:(BOOL)showFriendsEnabled {
     _showFriendsEnabled = showFriendsEnabled;
     self.showFriends.enabled = showFriendsEnabled;
-}
-
-- (void)setShowCancelHidden:(BOOL)showCancelHidden {
-    _showCancelHidden = showCancelHidden;
-    self.showCancel.hidden = showCancelHidden;
 }
 
 #pragma mark-
