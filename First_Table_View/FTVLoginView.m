@@ -7,6 +7,7 @@
 //
 
 #import "FTVLoginView.h"
+#import "FTVCoreUser.h"
 
 @implementation FTVLoginView
 
@@ -35,12 +36,18 @@
     _loginState = loginState;
     
     switch (loginState) {
+        case kFTVLoginStarted:
+            self.showFriendsButton.enabled = false;
+            self.loginLabel.text = @"Logginig in";
+            [self.activityIndicator startAnimating];
+            
+            return;
         case kFTVLoginFailed:
             self.showFriendsButton.enabled = false;
+            self.loginLabel.text = @"Please login";
             break;
         case kFTVLoginSucceed:
             self.showFriendsButton.enabled = true;
-            self.loginLabel.text = @"Please login";
             break;
         default:
             break;
@@ -51,10 +58,11 @@
 #pragma mark-
 #pragma mark Public Methods
 
-- (void)fillWithModel:(id<FBGraphUser>)model {
-    self.profilePictureView.profileID = model.objectID;
+- (void)fillWithModel:(FTVCoreUser *)model {
+    self.profilePictureView.profileID = model.userID;
     if (model) {
-        self.loginLabel.text = [NSString stringWithFormat:@"Logged as %@", model.name];
+        self.loginLabel.text = [NSString stringWithFormat:@"Logged as %@", model.firstName];
+        self.loginState = kFTVLoginSucceed;
     } else {
         self.loginState = kFTVLoginFailed;
     }

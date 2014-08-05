@@ -34,7 +34,7 @@
 #pragma mark Public Methods
 
 - (void)fillWithModel:(FTVCoreUser *)model {
-	[self.view fillWithModel:model.previewPicture];
+	[self.cellImageView fillWithModel:model.previewPicture];
     NSString *title = [NSString stringWithFormat:@"%@ %@", model.firstName, model.lastName];
 	NSLog(@"User %@ did load to cell", title);
 	self.label.text = title;

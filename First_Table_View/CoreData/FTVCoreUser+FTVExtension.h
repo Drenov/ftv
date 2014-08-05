@@ -7,6 +7,7 @@
 //
 
 #import "FTVCoreUser.h"
+#import "IDPActiveRecordKit.h"
 
 @class FTVImageModel;
 

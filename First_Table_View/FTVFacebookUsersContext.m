@@ -10,7 +10,7 @@
 #import "FTVCoreUser.h"
 #import "FTVCoreUser+FTVExtension.h"
 #import "NSObject+IDPExtensions.h"
-#import "IDPActiveRecordKit.h"
+//#import "IDPActiveRecordKit.h"
 
 #define kFTVFBGraphUserPictureUrlPath [@"picture"][@"data"][@"url"];
 

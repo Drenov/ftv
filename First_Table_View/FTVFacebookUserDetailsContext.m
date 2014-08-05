@@ -14,7 +14,7 @@
 
 #import "FTVImageModel.h"
 
-#import "IDPActiveRecordKit.h"
+//#import "IDPActiveRecordKit.h"
 
 #define kFTVFBGraphUserPictureUrlPath [@"picture"][@"data"][@"url"];
 #define kFTVFBGraphUserHometownPath [@"hometown"][@"name"];

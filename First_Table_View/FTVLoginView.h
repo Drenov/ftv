@@ -11,6 +11,7 @@
 #import "FTVView.h"
 
 typedef enum {
+    kFTVLoginStarted,
     kFTVLoginFailed,
     kFTVLoginSucceed
 } kFTVLoginState;
@@ -24,6 +25,5 @@ typedef enum {
 @property (nonatomic, retain)   IBOutlet    UIActivityIndicatorView     *activityIndicator;
 
 @property (nonatomic, assign)       kFTVLoginState          loginState;
-//@property (nonatomic, assign)       BOOL        showFriendsEnabled;
 
 @end

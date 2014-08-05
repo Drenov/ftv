@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
-#import "IDPModelObserver.h"
 #import "FTVViewController.h"
 
-@interface FTVLoginViewController : FTVViewController <IDPModelObserver, FBLoginViewDelegate>
+@interface FTVLoginViewController : FTVViewController <FBLoginViewDelegate>
 
 - (IBAction)onShowFriends:(id)sender;
 
