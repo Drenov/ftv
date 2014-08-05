@@ -27,11 +27,6 @@
 #pragma mark -
 #pragma mark Accessors
 
-//- (void)setShowFriendsEnabled:(BOOL)showFriendsEnabled {
-//    _showFriendsEnabled = showFriendsEnabled;
-//    self.showFriendsButton.enabled = showFriendsEnabled;
-//}
-
 - (void)setLoginState:(kFTVLoginState)loginState {
     _loginState = loginState;
     
