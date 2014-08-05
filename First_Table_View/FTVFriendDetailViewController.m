@@ -43,13 +43,13 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     self.detailsContext = nil;
-    [self.customView.picture.imageModel cancel];
+    [self.customView.imageView.imageModel cancel];
 
     [super viewWillDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
-    [self.customView.picture.imageModel dump];
+    [self.customView.imageView.imageModel dump];
     
     [super didReceiveMemoryWarning];
 }

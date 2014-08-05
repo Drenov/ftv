@@ -11,6 +11,6 @@
         <relationship name="friends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FTVCoreUser" inverseName="friends" inverseEntity="FTVCoreUser" syncable="YES"/>
     </entity>
     <elements>
-        <element name="FTVCoreUser" positionX="-36" positionY="9" width="128" height="165"/>
+        <element name="FTVCoreUser" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

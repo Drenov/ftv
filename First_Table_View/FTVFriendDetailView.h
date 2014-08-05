@@ -13,10 +13,10 @@
 
 @interface FTVFriendDetailView : FTVView
 
-@property (nonatomic, retain)   IBOutlet    UILabel         *name;
-@property (nonatomic, retain)   IBOutlet    UILabel         *country;
-@property (nonatomic, retain)   IBOutlet    UILabel         *city;
+@property (nonatomic, retain)   IBOutlet    UILabel         *nameLabel;
+@property (nonatomic, retain)   IBOutlet    UILabel         *countryLabel;
+@property (nonatomic, retain)   IBOutlet    UILabel         *cityLabel;
 
-@property (nonatomic, retain)   IBOutlet    FTVImageView    *picture;
+@property (nonatomic, retain)   IBOutlet    FTVImageView    *imageView;
 
 @end

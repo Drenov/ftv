@@ -14,15 +14,13 @@
 
 @implementation FTVFriendDetailView
 
-#pragma mark#import "FTVCoreUser+FTVExtension.h"
-
 #pragma mark Initializations and Deallocations
 
 - (void)dealloc {
-    self.name = nil;
-    self.country = nil;
-    self.city = nil;
-    self.picture = nil;
+    self.nameLabel = nil;
+    self.countryLabel = nil;
+    self.cityLabel = nil;
+    self.imageView = nil;
     
     [super dealloc];
 }
@@ -32,15 +30,15 @@
 
 - (void)fillWithModel:(FTVCoreUser *)user {
     NSString *name = [NSString stringWithFormat:@"%@ %@", user.firstName, user.lastName];
-    self.name.text = name;
-    self.city.text = user.city;
-    self.country.text = user.country;
+    self.nameLabel.text = name;
+    self.cityLabel.text = user.city;
+    self.countryLabel.text = user.country;
     FTVImageModel *picture = user.picture;
     if (!picture) {
         picture = user.previewPicture;
     }
     
-    [self.picture fillWithModel:picture];
+    [self.imageView fillWithModel:picture];
     NSLog(@"User %@ detail view updated", name);
 }
 

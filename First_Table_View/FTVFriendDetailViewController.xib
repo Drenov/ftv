@@ -81,10 +81,10 @@
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
-                <outlet property="city" destination="IPG-jp-hfh" id="baI-Ad-ZFI"/>
-                <outlet property="country" destination="wjp-ZC-2Hk" id="v1N-u3-fBj"/>
-                <outlet property="name" destination="XVG-Lt-evt" id="Olv-9R-sLg"/>
-                <outlet property="picture" destination="VJH-O9-d7m" id="uCv-RU-ijB"/>
+                <outlet property="cityLabel" destination="IPG-jp-hfh" id="kp2-em-KDA"/>
+                <outlet property="countryLabel" destination="wjp-ZC-2Hk" id="tFQ-jy-3Sw"/>
+                <outlet property="imageView" destination="VJH-O9-d7m" id="2e5-lD-toY"/>
+                <outlet property="nameLabel" destination="XVG-Lt-evt" id="Smv-JR-6ID"/>
             </connections>
         </view>
     </objects>
