@@ -18,7 +18,7 @@
 
 - (void)dealloc {
     self.label = nil;
-	self.view = nil;
+	self.cellImageView = nil;
     
     [super dealloc];
 }
