@@ -14,9 +14,9 @@
 @property (nonatomic, retain)   IBOutlet    FBLoginView                 *loginView;
 @property (nonatomic, retain)   IBOutlet    FBProfilePictureView        *profilePictureView;
 
-@property (nonatomic, retain)   IBOutlet    UILabel                     *label;
-@property (nonatomic, retain)   IBOutlet    UIButton                    *showFriends;
-@property (nonatomic, retain)   IBOutlet    UIActivityIndicatorView     *indicator;
+@property (nonatomic, retain)   IBOutlet    UILabel                     *loginLabel;
+@property (nonatomic, retain)   IBOutlet    UIButton                    *showFriendsButton;
+@property (nonatomic, retain)   IBOutlet    UIActivityIndicatorView     *activityIndicator;
 
 @property (nonatomic, assign)       BOOL        showFriendsEnabled;
 

@@ -18,9 +18,9 @@
 - (void)dealloc {
     self.loginView = nil;
     self.profilePictureView = nil;
-    self.label = nil;
-    self.showFriends = nil;
-    self.indicator = nil;
+    self.loginLabel = nil;
+    self.showFriendsButton = nil;
+    self.activityIndicator = nil;
 
     [super dealloc];
 }
@@ -30,7 +30,7 @@
 
 - (void)setShowFriendsEnabled:(BOOL)showFriendsEnabled {
     _showFriendsEnabled = showFriendsEnabled;
-    self.showFriends.enabled = showFriendsEnabled;
+    self.showFriendsButton.enabled = showFriendsEnabled;
 }
 
 #pragma mark-
@@ -39,10 +39,10 @@
 - (void)fillWithModel:(id<FBGraphUser>)model {
     self.profilePictureView.profileID = model.objectID;
     if (model) {
-        self.label.text = [NSString stringWithFormat:@"Logged as %@", model.name];
+        self.loginLabel.text = [NSString stringWithFormat:@"Logged as %@", model.name];
     } else {
         self.showFriendsEnabled = NO;
-        self.label.text = @"Please login";
+        self.loginLabel.text = @"Please login";
     }
 }
 

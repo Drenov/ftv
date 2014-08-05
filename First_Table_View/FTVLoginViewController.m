@@ -119,7 +119,7 @@ static	NSString *const	kFTVLoadingErrorMessage = @"No saved data found. Try agai
 - (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
     NSLog(@"<<Showing logged in user>>");
     FTVLoginView *view = self.customView;
-    [view.indicator startAnimating];
+    [view.activityIndicator startAnimating];
     FTVFacebookUsersContext *loadContext = [FTVFacebookUsersContext contextWithObject:self.usersModel];
     self.loadContext = loadContext;
     [loadContext execute];
@@ -149,7 +149,7 @@ static	NSString *const	kFTVLoadingErrorMessage = @"No saved data found. Try agai
     if (theModel == self.loadContext || theModel == self.readContext) {
         NSLog(@"<<Users did load>>");
         FTVLoginView *view = self.customView;
-        [view.indicator stopAnimating];
+        [view.activityIndicator stopAnimating];
         view.showFriendsEnabled = YES;
         self.usersModel = ((FTVUsersContext *)theModel).object;
         self.loadContext = nil;
@@ -169,7 +169,7 @@ static	NSString *const	kFTVLoadingErrorMessage = @"No saved data found. Try agai
     
     if (theModel == self.readContext) {
         NSLog(@"Users read failed");
-        [view.indicator stopAnimating];
+        [view.activityIndicator stopAnimating];
         [UIAlertView showErrorWithMessage:kFTVLoadingErrorMessage];
         self.readContext = nil;
     }
@@ -179,7 +179,7 @@ static	NSString *const	kFTVLoadingErrorMessage = @"No saved data found. Try agai
     if (theModel == self.loadContext) {
         NSLog(@"<<Users loading cancelled>>");
         FTVLoginView *view = self.customView;
-        [view.indicator stopAnimating];
+        [view.activityIndicator stopAnimating];
         self.loadContext = nil;
     }
 }

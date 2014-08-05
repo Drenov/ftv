@@ -54,11 +54,11 @@
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
-                <outlet property="indicator" destination="GZB-WI-4vi" id="mw9-rS-SQ0"/>
-                <outlet property="label" destination="Ceo-Ba-Yha" id="emU-Lb-lOU"/>
+                <outlet property="activityIndicator" destination="GZB-WI-4vi" id="5wK-2c-DKU"/>
+                <outlet property="loginLabel" destination="Ceo-Ba-Yha" id="4eV-gg-zee"/>
                 <outlet property="loginView" destination="M6V-TQ-QRS" id="OKy-2R-x5j"/>
                 <outlet property="profilePictureView" destination="Sjo-Qg-AwM" id="EVP-si-NoZ"/>
-                <outlet property="showFriends" destination="mVm-QV-zEK" id="HPJ-UI-P2G"/>
+                <outlet property="showFriendsButton" destination="mVm-QV-zEK" id="9ye-6S-PP3"/>
             </connections>
         </view>
     </objects>
