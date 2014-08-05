@@ -12,7 +12,7 @@
 
 @interface FTVCell : UITableViewCell
 @property (nonatomic, retain)	IBOutlet	UILabel				*label;
-@property (nonatomic, retain)	IBOutlet	FTVImageView		*view;
+@property (nonatomic, retain)	IBOutlet	FTVImageView		*cellImageView;
 
 - (void)fillWithModel:(id)model;
 

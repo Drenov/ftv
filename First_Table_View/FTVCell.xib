@@ -43,8 +43,8 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="cellImageView" destination="892-kS-IBY" id="R0S-VS-rH8"/>
                 <outlet property="label" destination="y7E-0B-ihI" id="Pve-CE-6qz"/>
-                <outlet property="view" destination="892-kS-IBY" id="NqC-c8-hyc"/>
             </connections>
         </tableViewCell>
     </objects>
