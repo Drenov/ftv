@@ -30,8 +30,8 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <connections>
-                        <outlet property="indicator" destination="gMz-0c-JWG" id="swB-Y9-BeK"/>
-                        <outlet property="pictureView" destination="KMR-lm-tGA" id="08q-tP-ouM"/>
+                        <outlet property="activityIndicatorView" destination="gMz-0c-JWG" id="5CS-77-5yo"/>
+                        <outlet property="imageView" destination="KMR-lm-tGA" id="SBp-vL-vkH"/>
                     </connections>
                 </view>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FdX-pL-oEJ">

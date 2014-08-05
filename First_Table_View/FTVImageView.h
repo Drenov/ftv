@@ -13,8 +13,8 @@
 @class FTVImageModel;
 
 @interface FTVImageView : FTVView <IDPModelObserver>
-@property (nonatomic, retain)	IBOutlet	UIImageView					*pictureView;
-@property (nonatomic, retain)	IBOutlet	UIActivityIndicatorView		*indicator;
+@property (nonatomic, retain)	IBOutlet	UIImageView					*imageView;
+@property (nonatomic, retain)	IBOutlet	UIActivityIndicatorView		*activityIndicatorView;
 
 @property (nonatomic, readonly)       FTVImageModel       *imageModel;
 

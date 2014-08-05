@@ -42,6 +42,7 @@ static NSString *const kFTVUserIdPredicateFormat = @"userID = %@";
     id path = self.previewPicturePath;
     FTVImageModel *image = [FTVImageModel imageModelWithPath:path];
     NSLog(@"Preview request");
+    
     return image;
 }
 
