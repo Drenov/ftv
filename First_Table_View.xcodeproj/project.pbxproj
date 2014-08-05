@@ -99,9 +99,9 @@
 		7DAF47E918FEA4D40084D346 /* FTVFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DAF47E818FEA4D40084D346 /* FTVFriendsViewController.xib */; };
 		7DAF47EC18FEADD10084D346 /* FTVFriendsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAF47EB18FEADD10084D346 /* FTVFriendsView.m */; };
 		7DAF47F118FECCBC0084D346 /* img_001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7DAF47F018FECCBC0084D346 /* img_001.jpg */; };
+		7DB096A3199143BB00398F21 /* FTVCoreUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB096A2199143BB00398F21 /* FTVCoreUser.m */; };
 		7DB0B0C11969418500DB01D8 /* FTVData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0B0BF1969418500DB01D8 /* FTVData.xcdatamodeld */; };
 		7DB0B22A1969751500DB01D8 /* FTVCoreUser+FTVExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0B2291969751500DB01D8 /* FTVCoreUser+FTVExtension.m */; };
-		7DB0B23319697D6000DB01D8 /* FTVCoreUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB0B23219697D6000DB01D8 /* FTVCoreUser.m */; };
 		7DB71DA6191124820097208D /* UIWindow+FTVExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB71DA5191124820097208D /* UIWindow+FTVExtensions.m */; };
 		7DB71DA9191134770097208D /* FTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB71DA8191134770097208D /* FTVCell.m */; };
 		7DB71DAC191134910097208D /* FTVImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB71DAB191134910097208D /* FTVImageView.m */; };
@@ -303,11 +303,11 @@
 		7DAF47EA18FEADD10084D346 /* FTVFriendsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTVFriendsView.h; path = ../../First_Table_View/FTVFriendsView.h; sourceTree = "<group>"; };
 		7DAF47EB18FEADD10084D346 /* FTVFriendsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTVFriendsView.m; path = ../../First_Table_View/FTVFriendsView.m; sourceTree = "<group>"; };
 		7DAF47F018FECCBC0084D346 /* img_001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = img_001.jpg; path = Resources/img_001.jpg; sourceTree = SOURCE_ROOT; };
+		7DB096A1199143BB00398F21 /* FTVCoreUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTVCoreUser.h; path = First_Table_View/CoreData/FTVCoreUser.h; sourceTree = SOURCE_ROOT; };
+		7DB096A2199143BB00398F21 /* FTVCoreUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTVCoreUser.m; path = First_Table_View/CoreData/FTVCoreUser.m; sourceTree = SOURCE_ROOT; };
 		7DB0B0C01969418500DB01D8 /* FTVData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FTVData.xcdatamodel; sourceTree = "<group>"; };
 		7DB0B2281969751500DB01D8 /* FTVCoreUser+FTVExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FTVCoreUser+FTVExtension.h"; path = "First_Table_View/CoreData/FTVCoreUser+FTVExtension.h"; sourceTree = SOURCE_ROOT; };
 		7DB0B2291969751500DB01D8 /* FTVCoreUser+FTVExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FTVCoreUser+FTVExtension.m"; path = "First_Table_View/CoreData/FTVCoreUser+FTVExtension.m"; sourceTree = SOURCE_ROOT; };
-		7DB0B23119697D6000DB01D8 /* FTVCoreUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTVCoreUser.h; path = First_Table_View/CoreData/FTVCoreUser.h; sourceTree = SOURCE_ROOT; };
-		7DB0B23219697D6000DB01D8 /* FTVCoreUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTVCoreUser.m; path = First_Table_View/CoreData/FTVCoreUser.m; sourceTree = SOURCE_ROOT; };
 		7DB71DA4191124820097208D /* UIWindow+FTVExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIWindow+FTVExtensions.h"; path = "First_Table_View/UIWindow+FTVExtensions.h"; sourceTree = "<group>"; };
 		7DB71DA5191124820097208D /* UIWindow+FTVExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIWindow+FTVExtensions.m"; path = "First_Table_View/UIWindow+FTVExtensions.m"; sourceTree = "<group>"; };
 		7DB71DA7191134770097208D /* FTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTVCell.h; sourceTree = "<group>"; };
@@ -904,9 +904,9 @@
 		7DB0B0BE1969411D00DB01D8 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				7DB096A1199143BB00398F21 /* FTVCoreUser.h */,
+				7DB096A2199143BB00398F21 /* FTVCoreUser.m */,
 				7DB0B0BF1969418500DB01D8 /* FTVData.xcdatamodeld */,
-				7DB0B23119697D6000DB01D8 /* FTVCoreUser.h */,
-				7DB0B23219697D6000DB01D8 /* FTVCoreUser.m */,
 				7DB0B2281969751500DB01D8 /* FTVCoreUser+FTVExtension.h */,
 				7DB0B2291969751500DB01D8 /* FTVCoreUser+FTVExtension.m */,
 			);
@@ -1084,7 +1084,7 @@
 				7DA9D428191BBB85009F8F47 /* UIEvent+IDPExtensions.m in Sources */,
 				7DA9D414191BBB85009F8F47 /* IDPOCImplementation.m in Sources */,
 				7DA9D40D191BBB85009F8F47 /* IDPMachTimer.m in Sources */,
-				7DB0B23319697D6000DB01D8 /* FTVCoreUser.m in Sources */,
+				7DB096A3199143BB00398F21 /* FTVCoreUser.m in Sources */,
 				7DA9D409191BBB85009F8F47 /* IDPBufferArray.m in Sources */,
 				7D23F5A1190E990000A17157 /* NSString+FTVExtensions.m in Sources */,
 				7DAF47C418FEA44E0084D346 /* FTVAppDelegate.m in Sources */,
