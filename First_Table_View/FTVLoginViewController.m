@@ -17,9 +17,11 @@
 #import "FTVFacebookUsersContext.h"
 #import "FTVUsersReadContext.h"
 
-#import "FTVCoreUser.h"//temporary del buuton
+#import "FTVCoreUser.h"
 
-#define kFTVFBLoginViewReadPermissions @[@"public_profile", @"user_friends", @"user_hometown"];
+static	NSString *const	kFTVReadPermissionPublicProfile = @"public_profile";
+static	NSString *const	kFTVReadPermissionUserFriends = @"user_friends";
+static	NSString *const	kFTVReadPermissionUserHometown = @"user_hometown";
 
 static	NSString *const	kFTVLoadingErrorMessage = @"No saved data found. Try again later";
 
@@ -30,6 +32,7 @@ static	NSString *const	kFTVLoadingErrorMessage = @"No saved data found. Try agai
 @property (nonatomic, retain)           FTVFacebookUsersContext     *loadContext;
 @property (nonatomic, retain)           FTVUsersReadContext         *readContext;
 
+- (NSArray *)readPermissions;
 - (void)cleanUsers;
 
 @end
@@ -61,7 +64,7 @@ static	NSString *const	kFTVLoadingErrorMessage = @"No saved data found. Try agai
 #pragma mark View Lifecycle
 
 - (void)viewDidLoad {
-    self.customView.loginView.readPermissions = kFTVFBLoginViewReadPermissions;
+    self.customView.loginView.readPermissions = [self readPermissions];
     
     [super viewDidLoad];
 }
@@ -109,6 +112,15 @@ static	NSString *const	kFTVLoadingErrorMessage = @"No saved data found. Try agai
 #pragma mark -
 #pragma mark Private Methods
 
+- (NSArray *)readPermissions {
+    NSArray *permissions = [NSArray arrayWithObjects:kFTVReadPermissionPublicProfile,
+                                                    kFTVReadPermissionUserFriends,
+                                                    kFTVReadPermissionUserHometown,
+                                                    nil];
+    
+    return permissions;
+}
+
 - (void)cleanUsers {
     [self.usersModel removeAllObjects];
 }
@@ -149,8 +161,6 @@ static	NSString *const	kFTVLoadingErrorMessage = @"No saved data found. Try agai
     if (theModel == self.loadContext || theModel == self.readContext) {
         NSLog(@"<<Users did load>>");
         FTVLoginView *view = self.customView;
-//        [view.activityIndicator stopAnimating];
-//        view.showFriendsEnabled = YES;
         view.loginState = kFTVLoginSucceed;
         self.usersModel = ((FTVUsersContext *)theModel).object;
         self.loadContext = nil;
