@@ -24,7 +24,6 @@ static	NSString *const	kFTVReadPermissionUserHometown = @"user_hometown";
 
 - (NSArray *)readPermissions;
 - (FTVCoreUser *)userFromFBGraphUser:(FBGraphObject<FBGraphUser> *)graphUser;
-- (void)cleanUsers;
 
 @end
 
@@ -100,11 +99,6 @@ static	NSString *const	kFTVReadPermissionUserHometown = @"user_hometown";
     return permissions;
 }
 
-- (void)cleanUsers {
-    self.loggedInUser = nil;
-    [self.usersModel removeAllObjects];
-}
-
 - (FTVCoreUser *)userFromFBGraphUser:(FBGraphObject<FBGraphUser> *)graphUser {
     FTVCoreUser *user = [FTVCoreUser userWithId:graphUser.objectID];
     user.firstName = graphUser.first_name;
@@ -117,10 +111,6 @@ static	NSString *const	kFTVReadPermissionUserHometown = @"user_hometown";
 
 #pragma mark-
 #pragma mark FBLoginViewDelegate
-
-- (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
-    NSLog(@"<<Showing logged in user>>");
-}
 
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
                             user:(id<FBGraphUser>)user
@@ -136,7 +126,7 @@ static	NSString *const	kFTVReadPermissionUserHometown = @"user_hometown";
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
     NSLog(@"<<User logged out>>");
     [self.customView fillWithModel:nil];
-    [self cleanUsers];
+    self.loggedInUser = nil;
 }
 
 - (void)loginView:(FBLoginView *)loginView handleError:(NSError *)error {
