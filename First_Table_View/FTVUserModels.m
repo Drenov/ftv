@@ -86,7 +86,7 @@
     return [self.userModels objectAtIndex:index];
 }
 
-- (NSInteger)count {
+- (NSUInteger)count {
     return [self.userModels count];
 }
 

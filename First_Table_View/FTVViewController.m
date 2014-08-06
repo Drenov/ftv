@@ -7,6 +7,7 @@
 //
 
 #import "FTVViewController.h"
+#import "IDPPropertyMacros.h"
 
 @implementation FTVViewController
 
@@ -14,6 +15,10 @@
     self.object = nil;
     
     [super dealloc];
+}
+
+- (void)setObject:(id)object {
+    IDPNonatomicRetainPropertySynthesizeWithObserver(_object, object);
 }
 
 @end

@@ -14,14 +14,24 @@
 #import "FTVUserModels.h"
 
 #import "IDPLoadingView.h"
+#import "UIAlertView+IDPExtensions.h"
+#import "IDPPropertyMacros.h"
 #import "UITableView+IDPCellLoading.h"
 #import "UIViewController+IDPExtensions.h"
 #import "NSObject+IDPExtensions.h"
 
+#import "FTVFacebookUsersContext.h"
+#import "FTVUsersReadContext.h"
+
+static	NSString *const	kFTVLoadingErrorMessage = @"No saved data found. Try again later";
+
 @interface FTVFriendsViewController ()
-@property (nonatomic, readonly)         FTVFriendsView          *friendsView;
-@property (nonatomic, retain)           FTVUserModels           *userModels;
-@property (nonatomic, retain)           IDPLoadingView          *loadingView;
+@property (nonatomic, readonly)         FTVFriendsView              *friendsView;
+@property (nonatomic, retain)           FTVUserModels               *userModels;
+@property (nonatomic, retain)           IDPLoadingView              *loadingView;
+
+@property (nonatomic, retain)           FTVFacebookUsersContext     *loadContext;
+@property (nonatomic, retain)           FTVUsersReadContext         *readContext;
 
 @end
 
@@ -35,6 +45,8 @@
 - (void)dealloc {
     self.userModels = nil;
     self.loadingView = nil;
+    self.loadContext = nil;
+    self.readContext = nil;
     
     [super dealloc];
 }
@@ -147,5 +159,46 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
     controller.object = [self.userModels objectAtIndex:index];
     [self.navigationController pushViewController:controller animated:YES];
 }
+
+//#pragma mark-
+//#pragma mark IDPModelObserver
+//
+//- (void)modelDidLoad:(id)theModel {
+//    if (theModel == self.loadContext || theModel == self.readContext) {
+//        NSLog(@"<<Users did load>>");
+//        FTVLoginView *view = self.customView;
+//        view.loginState = kFTVLoginSucceed;
+//        self.usersModel = ((FTVUsersContext *)theModel).object;
+//        self.loadContext = nil;
+//        self.readContext = nil;
+//    }
+//}
+//
+//- (void)modelDidFailToLoad:(id)theModel {
+//    FTVLoginView *view = self.customView;
+//    if (theModel == self.loadContext) {
+//        NSLog(@"Users load failed, reading saved data");
+//        self.loadContext = nil;
+//        FTVUsersReadContext *readContext = [FTVUsersReadContext contextWithObject:self.usersModel];
+//        self.readContext = readContext;
+//        [readContext execute];
+//    }
+//
+//    if (theModel == self.readContext) {
+//        NSLog(@"Users read failed");
+//        [view.activityIndicator stopAnimating];
+//        [UIAlertView showErrorWithMessage:kFTVLoadingErrorMessage];
+//        self.readContext = nil;
+//    }
+//}
+//
+//- (void)modelDidCancelLoading:(id)theModel {
+//    if (theModel == self.loadContext) {
+//        NSLog(@"<<Users loading cancelled>>");
+//        FTVLoginView *view = self.customView;
+//        [view.activityIndicator stopAnimating];
+//        self.loadContext = nil;
+//    }
+//}
 
 @end
