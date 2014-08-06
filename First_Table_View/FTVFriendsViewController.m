@@ -13,20 +13,42 @@
 #import "FTVImageView.h"
 #import "FTVUserModels.h"
 
+#import "IDPLoadingView.h"
 #import "UITableView+IDPCellLoading.h"
 #import "UIViewController+IDPExtensions.h"
-
-#import "NSMutableArray+FTVExtensions.h"
+#import "NSObject+IDPExtensions.h"
 
 @interface FTVFriendsViewController ()
 @property (nonatomic, readonly)         FTVFriendsView          *friendsView;
 @property (nonatomic, retain)           FTVUserModels           *userModels;
+@property (nonatomic, retain)           IDPLoadingView          *loadingView;
 
 @end
 
 @implementation FTVFriendsViewController
 
 @dynamic friendsView;
+
+#pragma mark
+#pragma mark Initializations and Deallocations
+
+- (void)dealloc {
+    self.userModels = nil;
+    self.loadingView = nil;
+    
+    [super dealloc];
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        if (!self.userModels) {
+            self.userModels = [FTVUserModels object];
+        }
+    }
+
+    return self;
+}
 
 #pragma mark -
 #pragma mark Accessors
@@ -37,6 +59,7 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
 #pragma mark View Lifecycle
 
 - (void)viewDidLoad {
+    self.loadingView = [IDPLoadingView loadingViewInView:self.view];
     
     [super viewDidLoad];
 }
