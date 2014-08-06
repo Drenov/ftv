@@ -72,6 +72,9 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
 
 - (void)viewDidLoad {
     self.loadingView = [IDPLoadingView loadingViewInView:self.view];
+    FTVFacebookUsersContext *loadContext = [FTVFacebookUsersContext contextWithObject:self.object];
+    self.loadContext = loadContext;
+    [loadContext execute];
     
     [super viewDidLoad];
 }
@@ -160,19 +163,19 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
     [self.navigationController pushViewController:controller animated:YES];
 }
 
-//#pragma mark-
-//#pragma mark IDPModelObserver
-//
-//- (void)modelDidLoad:(id)theModel {
-//    if (theModel == self.loadContext || theModel == self.readContext) {
-//        NSLog(@"<<Users did load>>");
-//        FTVLoginView *view = self.customView;
-//        view.loginState = kFTVLoginSucceed;
+#pragma mark-
+#pragma mark IDPModelObserver
+
+- (void)modelDidLoad:(id)theModel {
+    if (theModel == self.object) {
+        NSLog(@"<<Friends data did load>>");
+//        FTVLoginView *view = self.logi;
 //        self.usersModel = ((FTVUsersContext *)theModel).object;
-//        self.loadContext = nil;
-//        self.readContext = nil;
-//    }
-//}
+        
+        self.loadContext = nil;
+        self.readContext = nil;
+    }
+}
 //
 //- (void)modelDidFailToLoad:(id)theModel {
 //    FTVLoginView *view = self.customView;

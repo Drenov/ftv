@@ -10,12 +10,13 @@
 #import "FTVCoreUser.h"
 #import "FTVCoreUser+FTVExtension.h"
 #import "NSObject+IDPExtensions.h"
-//#import "IDPActiveRecordKit.h"
 
 #define kFTVFBGraphUserPictureUrlPath [@"picture"][@"data"][@"url"];
 
 static	NSString *const	kFTVFBRequestConnectionResultField = @"data";
 static	NSString *const	kFTVFBRequestConnectionGraphPathRequest = @"/me/friends?fields=first_name,last_name, picture.type(small)";
+
+
 
 @interface FTVFacebookUsersContext()
 

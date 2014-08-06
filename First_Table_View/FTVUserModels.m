@@ -45,6 +45,20 @@
 #pragma mark -
 #pragma mark Public Methods
 
+- (void)addObjects:(NSSet *)users {
+    id syncObject = self.mutableObjects;
+	@synchronized(syncObject) {
+        
+    }
+}
+
+- (void)removeObjects:(NSSet *)users {
+    id syncObject = self.mutableObjects;
+	@synchronized(syncObject) {
+        
+    }
+}
+
 - (void)addObject:(id)user {
     id syncObject = self.mutableObjects;
 	@synchronized(syncObject) {

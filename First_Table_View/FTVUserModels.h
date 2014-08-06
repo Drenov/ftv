@@ -14,6 +14,9 @@
 @interface FTVUserModels : IDPModel
 @property (nonatomic, readonly)		NSArray		*userModels;
 
+- (void)addObjects:(NSSet *)users;
+- (void)removeObjects:(NSSet *)users;
+
 - (void)addObject:(FTVCoreUser *)user;
 - (void)removeAllObjects;
 
