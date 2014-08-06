@@ -26,6 +26,7 @@
 		7D4D48801969B1BC00C7175E /* NSMutableArray+FTVExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4D487F1969B1BC00C7175E /* NSMutableArray+FTVExtensions.m */; };
 		7D6A6959195C9CB80068BFF1 /* FTVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6A6956195C9CB80068BFF1 /* FTVViewController.m */; };
 		7D8EF8731941D0CA00B4AD02 /* FTVFacebookUsersContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8EF8721941D0CA00B4AD02 /* FTVFacebookUsersContext.m */; };
+		7D97BD9419921BC000331E1F /* FTVUserModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D97BD9319921BC000331E1F /* FTVUserModels.m */; };
 		7DA1567C194EC6C900E85AFA /* NSFileManager+FTVExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA1567B194EC6C900E85AFA /* NSFileManager+FTVExtensions.m */; };
 		7DA1567E194ECB0D00E85AFA /* exclamation.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7DA1567D194ECB0D00E85AFA /* exclamation.jpg */; };
 		7DA2049F195AF47A00CBC873 /* FTVView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2049E195AF47A00CBC873 /* FTVView.m */; };
@@ -159,6 +160,8 @@
 		7D6A6956195C9CB80068BFF1 /* FTVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTVViewController.m; path = First_Table_View/FTVViewController.m; sourceTree = SOURCE_ROOT; };
 		7D8EF8711941D0CA00B4AD02 /* FTVFacebookUsersContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTVFacebookUsersContext.h; sourceTree = "<group>"; };
 		7D8EF8721941D0CA00B4AD02 /* FTVFacebookUsersContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTVFacebookUsersContext.m; sourceTree = "<group>"; };
+		7D97BD9219921BC000331E1F /* FTVUserModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTVUserModels.h; path = First_Table_View/FTVUserModels.h; sourceTree = "<group>"; };
+		7D97BD9319921BC000331E1F /* FTVUserModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTVUserModels.m; path = First_Table_View/FTVUserModels.m; sourceTree = "<group>"; };
 		7DA1567A194EC6C900E85AFA /* NSFileManager+FTVExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFileManager+FTVExtensions.h"; path = "First_Table_View/NSFileManager+FTVExtensions.h"; sourceTree = "<group>"; };
 		7DA1567B194EC6C900E85AFA /* NSFileManager+FTVExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+FTVExtensions.m"; path = "First_Table_View/NSFileManager+FTVExtensions.m"; sourceTree = "<group>"; };
 		7DA1567D194ECB0D00E85AFA /* exclamation.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = exclamation.jpg; path = Resources/exclamation.jpg; sourceTree = SOURCE_ROOT; };
@@ -425,6 +428,15 @@
 			);
 			name = Contexts;
 			path = First_Table_View;
+			sourceTree = "<group>";
+		};
+		7D97BD9119921B8100331E1F /* Users model */ = {
+			isa = PBXGroup;
+			children = (
+				7D97BD9219921BC000331E1F /* FTVUserModels.h */,
+				7D97BD9319921BC000331E1F /* FTVUserModels.m */,
+			);
+			name = "Users model";
 			sourceTree = "<group>";
 		};
 		7DA509D719586D490099BA5D /* View Controllers */ = {
@@ -813,6 +825,7 @@
 				7DA509D719586D490099BA5D /* View Controllers */,
 				7DA509DB19586EB80099BA5D /* Views */,
 				7D8EF8701941D0AA00B4AD02 /* Contexts */,
+				7D97BD9119921B8100331E1F /* Users model */,
 				7D11093B1949D772002C9CF5 /* Image model */,
 				7DAF47B918FEA44E0084D346 /* First_Table_View */,
 				7DAF47EF18FECC3F0084D346 /* Resources */,
@@ -1087,6 +1100,7 @@
 				7DB096A3199143BB00398F21 /* FTVCoreUser.m in Sources */,
 				7DA9D409191BBB85009F8F47 /* IDPBufferArray.m in Sources */,
 				7D23F5A1190E990000A17157 /* NSString+FTVExtensions.m in Sources */,
+				7D97BD9419921BC000331E1F /* FTVUserModels.m in Sources */,
 				7DAF47C418FEA44E0084D346 /* FTVAppDelegate.m in Sources */,
 				7D4D48801969B1BC00C7175E /* NSMutableArray+FTVExtensions.m in Sources */,
 				7DA9D42F191BBB85009F8F47 /* UIViewController+IDPInitialization.m in Sources */,

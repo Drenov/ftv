@@ -10,8 +10,6 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "IDPModel.h"
 
-@class FTVUsersModel;
-
 // This is an abstract subclass, which
 // should never be instantiated directly
 

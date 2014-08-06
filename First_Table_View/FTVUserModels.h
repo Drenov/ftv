@@ -9,16 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "IDPModel.h"
 
-@class FTVUser;
+@class FTVCoreUser;
 
-@interface FTVUsersModel : IDPModel
-@property (nonatomic, readonly)		NSArray		*users;
+@interface FTVUserModels : IDPModel
+@property (nonatomic, readonly)		NSArray		*userModels;
 
-- (void)addObject:(FTVUser *)user;
+- (void)addObject:(FTVCoreUser *)user;
 - (void)removeAllObjects;
 
 - (void)removeObjectAtIndex:(NSInteger)index;
 - (void)moveObjectAtIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
-- (FTVUser *)objectAtIndex:(NSInteger)index;
+- (FTVCoreUser *)objectAtIndex:(NSInteger)index;
 
 @end

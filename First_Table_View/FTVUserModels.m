@@ -6,17 +6,16 @@
 //  Copyright (c) 2014 Mykhailov Andrii. All rights reserved.
 //
 
-#import "FTVUsersModel.h"
-#import "FTVUser.h"
+#import "FTVUserModels.h"
 
-@interface FTVUsersModel()
+@interface FTVUserModels()
 @property (nonatomic, retain)       NSMutableArray      *mutableObjects;
 
 @end
 
-@implementation FTVUsersModel
+@implementation FTVUserModels
 
-@dynamic users;
+@dynamic userModels;
 
 #pragma mark
 #pragma mark Initializations and Deallocations
@@ -39,14 +38,14 @@
 #pragma mark -
 #pragma mark Accessors
 
-- (NSArray *)users {
+- (NSArray *)userModels {
 	return [[self.mutableObjects copy] autorelease];
 }
 
 #pragma mark -
 #pragma mark Public Methods
 
-- (void)addObject:(FTVUser *)user {
+- (void)addObject:(id)user {
     id syncObject = self.mutableObjects;
 	@synchronized(syncObject) {
 		[syncObject addObject:user];
@@ -83,17 +82,8 @@
 	}
 }
 
-- (FTVUser *)objectAtIndex:(NSInteger)index {
-    return [self.users objectAtIndex:index];
-}
-
-#pragma mark-
-#pragma mark IDPModel
-
-- (void)cleanup {
-	for (id object in self.users) {
-		[object dump];
-	}
+- (FTVCoreUser *)objectAtIndex:(NSInteger)index {
+    return [self.userModels objectAtIndex:index];
 }
 
 @end
