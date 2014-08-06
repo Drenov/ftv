@@ -11,6 +11,7 @@
 #import "FTVFriendsView.h"
 #import "FTVCell.h"
 #import "FTVImageView.h"
+#import "FTVUserModels.h"
 
 #import "UITableView+IDPCellLoading.h"
 #import "UIViewController+IDPExtensions.h"
@@ -19,6 +20,7 @@
 
 @interface FTVFriendsViewController ()
 @property (nonatomic, readonly)         FTVFriendsView          *friendsView;
+@property (nonatomic, retain)           FTVUserModels           *userModels;
 
 @end
 
@@ -60,7 +62,7 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
 - (NSInteger)		tableView:(UITableView *)tableView
 		numberOfRowsInSection:(NSInteger)section
 {
-	return [self.usersModel count];
+	return [self.object count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -69,7 +71,7 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
 	NSUInteger index = indexPath.row;
 	NSLog(@"Loaded cell for row - %d", index);
 	
-	id user = [self.usersModel objectAtIndex:index];
+	id user = [self.object objectAtIndex:index];
 	
 	FTVCell *cell = [tableView dequeueCell:[FTVCell class]];
     [cell fillWithModel:user];
@@ -89,7 +91,7 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
 		return;
 	}
 	
-	[self.usersModel moveObjectAtIndex:fromIndex toIndex:toIndex];
+	[self.object moveObjectAtIndex:fromIndex toIndex:toIndex];
 }
 
 - (void)	tableView:(UITableView *)tableView
@@ -102,7 +104,7 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
 	}
 	
 	if (UITableViewCellEditingStyleDelete == editingStyle) {
-		[self.usersModel removeObjectAtIndex:indexPath.row];
+		[self.object removeObjectAtIndex:indexPath.row];
         NSArray *rowInArray = [NSArray arrayWithObject:indexPath];
 		[self.tableView deleteRowsAtIndexPaths:rowInArray
 							  withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -119,7 +121,7 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
     NSLog(@"Selected row %d", index);
     FTVFriendDetailViewController *controller = nil;
     controller = [FTVFriendDetailViewController defaultNibController];
-    controller.usersModel = [self.usersModel objectAtIndex:index];
+    controller.object = [self.object objectAtIndex:index];
     [self.navigationController pushViewController:controller animated:YES];
 }
 

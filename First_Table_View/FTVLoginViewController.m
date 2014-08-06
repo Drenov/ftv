@@ -40,14 +40,14 @@ static	NSString *const	kFTVReadPermissionUserHometown = @"user_hometown";
     [super dealloc];
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        self.usersModel = [NSMutableArray array];
-    }
-
-    return self;
-}
+//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+//    if (self) {
+//        self.object = [NSMutableArray array];
+//    }
+//
+//    return self;
+//}
 
 #pragma mark -
 #pragma mark View Lifecycle
@@ -77,6 +77,7 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVLoginView, loginView);
 - (IBAction)onShowFriends:(id)sender {
     NSLog(@"Show friends pressed");
     FTVFriendsViewController *controller = [FTVFriendsViewController defaultNibController];
+    controller.object = self.loggedInUser;
     [self.navigationController pushViewController:controller animated:YES];
 }
 

@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FTVViewController : UIViewController
-@property (nonatomic, retain)       id        usersModel;
+@property (nonatomic, retain)       id        object;
 
 @end

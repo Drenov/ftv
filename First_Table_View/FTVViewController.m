@@ -11,7 +11,7 @@
 @implementation FTVViewController
 
 - (void)dealloc {
-    self.usersModel = nil;
+    self.object = nil;
     
     [super dealloc];
 }

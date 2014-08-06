@@ -19,6 +19,8 @@
 
 - (void)removeObjectAtIndex:(NSInteger)index;
 - (void)moveObjectAtIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
+
 - (FTVCoreUser *)objectAtIndex:(NSInteger)index;
+- (NSUInteger)count;
 
 @end

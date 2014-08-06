@@ -37,7 +37,7 @@
 #pragma mark View Lifecycle
 
 - (void)viewDidLoad {
-    [self.friendDetailView fillWithModel:self.usersModel];
+    [self.friendDetailView fillWithModel:self.object];
     
     [super viewDidLoad];
 }
@@ -52,8 +52,8 @@
 
 IDPViewControllerViewOfClassGetterSynthesize(FTVFriendDetailView, friendDetailView);
 
-- (void)setUsersModel:(FTVCoreUser *)user {
-    [super setUsersModel:user];
+- (void)setObject:(FTVCoreUser *)user {
+    [super setObject:user];
     FTVFacebookUserDetailsContext *context = [FTVFacebookUserDetailsContext contextWithObject:user];
     self.detailsContext = context;
     [context execute];
@@ -72,7 +72,7 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendDetailView, friendDetailVi
 
 - (void)modelDidLoad:(id)theModel {
     if (theModel == self.detailsContext) {
-        FTVCoreUser *user = self.usersModel;
+        FTVCoreUser *user = self.object;
         NSLog(@"User %@ details did load", user.firstName);
         [self.friendDetailView fillWithModel:user];
         self.detailsContext = nil;
@@ -81,7 +81,7 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendDetailView, friendDetailVi
 
 - (void)modelDidFailToLoad:(id)theModel {
     if (theModel == self.detailsContext) {
-        FTVCoreUser *user = self.usersModel;
+        FTVCoreUser *user = self.object;
         NSLog(@"User %@ details failed to load", user.firstName);
         [self.friendDetailView fillWithModel:user];
         self.detailsContext = nil;
