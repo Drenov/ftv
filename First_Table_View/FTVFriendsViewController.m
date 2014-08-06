@@ -62,7 +62,7 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
 - (NSInteger)		tableView:(UITableView *)tableView
 		numberOfRowsInSection:(NSInteger)section
 {
-	return [self.object count];
+	return [self.userModels count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -71,7 +71,7 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
 	NSUInteger index = indexPath.row;
 	NSLog(@"Loaded cell for row - %d", index);
 	
-	id user = [self.object objectAtIndex:index];
+	id user = [self.userModels objectAtIndex:index];
 	
 	FTVCell *cell = [tableView dequeueCell:[FTVCell class]];
     [cell fillWithModel:user];
@@ -91,7 +91,7 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
 		return;
 	}
 	
-	[self.object moveObjectAtIndex:fromIndex toIndex:toIndex];
+	[self.userModels moveObjectAtIndex:fromIndex toIndex:toIndex];
 }
 
 - (void)	tableView:(UITableView *)tableView
@@ -104,7 +104,7 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
 	}
 	
 	if (UITableViewCellEditingStyleDelete == editingStyle) {
-		[self.object removeObjectAtIndex:indexPath.row];
+		[self.userModels removeObjectAtIndex:indexPath.row];
         NSArray *rowInArray = [NSArray arrayWithObject:indexPath];
 		[self.tableView deleteRowsAtIndexPaths:rowInArray
 							  withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -121,7 +121,7 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
     NSLog(@"Selected row %d", index);
     FTVFriendDetailViewController *controller = nil;
     controller = [FTVFriendDetailViewController defaultNibController];
-    controller.object = [self.object objectAtIndex:index];
+    controller.object = [self.userModels objectAtIndex:index];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
