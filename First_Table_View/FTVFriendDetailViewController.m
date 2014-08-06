@@ -11,17 +11,18 @@
 #import "FTVCoreUser.h"
 #import "FTVImageView.h"
 #import "IDPPropertyMacros.h"
+#import "UIViewController+IDPExtensions.h"
 #import "FTVFacebookUserDetailsContext.h"
 
 @interface FTVFriendDetailViewController ()
 @property (nonatomic, retain)       FTVFacebookUserDetailsContext       *detailsContext;
-@property (nonatomic, readonly)     FTVFriendDetailView                 *customView;
+@property (nonatomic, readonly)     FTVFriendDetailView                 *friendDetailView;
 
 @end
 
 @implementation FTVFriendDetailViewController
 
-@dynamic customView;
+@dynamic friendDetailView;
 
 #pragma mark
 #pragma mark Initializations and Deallocations
@@ -36,20 +37,20 @@
 #pragma mark View Lifecycle
 
 - (void)viewDidLoad {
-    [self.customView fillWithModel:self.usersModel];
+    [self.friendDetailView fillWithModel:self.usersModel];
     
     [super viewDidLoad];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     self.detailsContext = nil;
-    [self.customView.imageView.imageModel cancel];
+    [self.friendDetailView.imageView.imageModel cancel];
 
     [super viewWillDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
-    [self.customView.imageView.imageModel dump];
+    [self.friendDetailView.imageView.imageModel dump];
     
     [super didReceiveMemoryWarning];
 }
@@ -57,14 +58,7 @@
 #pragma mark -
 #pragma mark Accessors
 
-- (FTVFriendDetailView *)customView {
-    id view = self.view;
-	if ([self isViewLoaded] && [view isKindOfClass:[FTVFriendDetailView class]]) {
-		return (FTVFriendDetailView *)view;
-	}
-	
-	return nil;
-}
+IDPViewControllerViewOfClassGetterSynthesize(FTVFriendDetailView, friendDetailView);
 
 - (void)setUsersModel:(FTVCoreUser *)user {
     [super setUsersModel:user];
@@ -88,7 +82,7 @@
     if (theModel == self.detailsContext) {
         FTVCoreUser *user = self.usersModel;
         NSLog(@"User %@ details did load", user.firstName);
-        [self.customView fillWithModel:user];
+        [self.friendDetailView fillWithModel:user];
         self.detailsContext = nil;
     }
 }
@@ -97,7 +91,7 @@
     if (theModel == self.detailsContext) {
         FTVCoreUser *user = self.usersModel;
         NSLog(@"User %@ details failed to load", user.firstName);
-        [self.customView fillWithModel:user];
+        [self.friendDetailView fillWithModel:user];
         self.detailsContext = nil;
     }
 }

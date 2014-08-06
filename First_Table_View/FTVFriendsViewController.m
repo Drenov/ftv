@@ -18,25 +18,18 @@
 #import "NSMutableArray+FTVExtensions.h"
 
 @interface FTVFriendsViewController ()
-@property (nonatomic, readonly)		FTVFriendsView                      *customView;
+@property (nonatomic, readonly)         FTVFriendsView          *friendsView;
 
 @end
 
 @implementation FTVFriendsViewController
 
-@dynamic customView;
+@dynamic friendsView;
 
 #pragma mark -
 #pragma mark Accessors
 
-- (FTVFriendsView *)customView {
-    id view = self.view;
-	if ([self isViewLoaded] && [view isKindOfClass:[FTVFriendsView class]]) {
-		return (FTVFriendsView *)view;
-	}
-	
-	return nil;
-}
+IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
 
 #pragma mark -
 #pragma mark View Lifecycle

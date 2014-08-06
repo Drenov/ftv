@@ -19,7 +19,7 @@ static	NSString *const	kFTVReadPermissionUserFriends = @"user_friends";
 static	NSString *const	kFTVReadPermissionUserHometown = @"user_hometown";
 
 @interface FTVLoginViewController ()
-@property (nonatomic, readonly)         FTVLoginView                *customView;
+@property (nonatomic, readonly)         FTVLoginView                *loginView;
 @property (nonatomic, retain)           FTVCoreUser                 *loggedInUser;
 
 - (NSArray *)readPermissions;
@@ -29,7 +29,7 @@ static	NSString *const	kFTVReadPermissionUserHometown = @"user_hometown";
 
 @implementation FTVLoginViewController
 
-@dynamic customView;
+@dynamic loginView;
 
 #pragma mark
 #pragma mark Initializations and Deallocations
@@ -53,7 +53,7 @@ static	NSString *const	kFTVReadPermissionUserHometown = @"user_hometown";
 #pragma mark View Lifecycle
 
 - (void)viewDidLoad {
-    FTVLoginView *view = self.customView;
+    FTVLoginView *view = self.loginView;
     view.loginView.readPermissions = [self readPermissions];
     view.loginState = kFTVLoginStarted;
     
@@ -69,14 +69,7 @@ static	NSString *const	kFTVReadPermissionUserHometown = @"user_hometown";
 #pragma mark -
 #pragma mark Accessors
 
-- (FTVLoginView *)customView {
-    id view = self.view;
-	if ([self isViewLoaded] && [view isKindOfClass:[FTVLoginView class]]) {
-		return (FTVLoginView *)view;
-	}
-	
-	return nil;
-}
+IDPViewControllerViewOfClassGetterSynthesize(FTVLoginView, loginView);
 
 #pragma mark -
 #pragma mark UI Handling Methods
@@ -119,19 +112,19 @@ static	NSString *const	kFTVReadPermissionUserHometown = @"user_hometown";
     if (!self.loggedInUser) {
         FTVCoreUser *loggedInUser = [self userFromFBGraphUser:(FBGraphObject<FBGraphUser> *)user];
         self.loggedInUser = loggedInUser;
-        [self.customView fillWithModel:loggedInUser];
+        [self.loginView fillWithModel:loggedInUser];
     }
 }
 
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
     NSLog(@"<<User logged out>>");
-    [self.customView fillWithModel:nil];
+    [self.loginView fillWithModel:nil];
     self.loggedInUser = nil;
 }
 
 - (void)loginView:(FBLoginView *)loginView handleError:(NSError *)error {
     NSLog(@"FBLoginView error = %@", error);
-    self.customView.loginState = kFTVLoginFailed;
+    self.loginView.loginState = kFTVLoginFailed;
 }
 
 @end
