@@ -43,7 +43,6 @@
 }
 
 - (void)didReceiveMemoryWarning {
-    [self.friendDetailView.imageView.imageModel dump];
     
     [super didReceiveMemoryWarning];
 }
