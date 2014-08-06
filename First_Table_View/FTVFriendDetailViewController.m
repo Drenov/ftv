@@ -42,13 +42,6 @@
     [super viewDidLoad];
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-    self.detailsContext = nil;
-    [self.friendDetailView.imageView.imageModel cancel];
-
-    [super viewWillDisappear:animated];
-}
-
 - (void)didReceiveMemoryWarning {
     [self.friendDetailView.imageView.imageModel dump];
     
