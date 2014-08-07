@@ -80,6 +80,7 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
 - (void)setObject:(id<IDPModel>)object {
     [super setObject:object];
     self.loadContext = nil;
+    [self.userModels removeAllObjects];
     if (object) {
         self.loadingView = [IDPLoadingView loadingViewInView:self.view];
         FTVFacebookUsersContext *loadContext = [FTVFacebookUsersContext contextWithObject:object];
@@ -102,11 +103,6 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
 #pragma mark View Lifecycle
 
 - (void)viewDidLoad {
-//#warning move this to setObject
-//    self.loadingView = [IDPLoadingView loadingViewInView:self.view];
-//    FTVFacebookUsersContext *loadContext = [FTVFacebookUsersContext contextWithObject:self.object];
-//    self.loadContext = loadContext;
-//    [loadContext execute];
     
     [super viewDidLoad];
 }
@@ -189,10 +185,7 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
 {
     NSInteger index = indexPath.row;
     NSLog(@"Selected row %d", index);
-    FTVFriendDetailViewController *controller = nil;
-    controller = [FTVFriendDetailViewController defaultNibController];
-    controller.object = [self.userModels objectAtIndex:index];
-    [self.navigationController pushViewController:controller animated:YES];
+    self.object = [self.userModels objectAtIndex:index];
 }
 
 #pragma mark-

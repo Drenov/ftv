@@ -27,7 +27,8 @@
         return;
     }
     
-    [(NSMutableArray *)self.object setArray:reply];
+//    [(NSMutableArray *)self.object setArray:reply];
+    
     [self.object finishLoading];
 }
 
