@@ -9,10 +9,12 @@
 #import "FTVFriendDetailViewController.h"
 #import "FTVFriendDetailView.h"
 #import "FTVCoreUser.h"
+#import "FTVCoreUser+FTVExtension.h"
 #import "FTVImageView.h"
+#import "FTVFacebookUserDetailsContext.h"
+
 #import "IDPPropertyMacros.h"
 #import "UIViewController+IDPExtensions.h"
-#import "FTVFacebookUserDetailsContext.h"
 
 @interface FTVFriendDetailViewController ()
 @property (nonatomic, retain)       FTVFacebookUserDetailsContext       *detailsContext;
@@ -64,14 +66,14 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendDetailView, friendDetailVi
         [_detailsContext cancel];
     }
     
-    IDPNonatomicRetainPropertySynthesizeWithObserver(_detailsContext, detailsContext);
+    IDPNonatomicRetainPropertySynthesize(_detailsContext, detailsContext);
 }
 
 #pragma mark-
 #pragma mark IDPModelObserver
 
 - (void)modelDidLoad:(id)theModel {
-    if (theModel == self.detailsContext) {
+    if (theModel == self.object) {
         FTVCoreUser *user = self.object;
         NSLog(@"User %@ details did load", user.firstName);
         [self.friendDetailView fillWithModel:user];
@@ -80,7 +82,7 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendDetailView, friendDetailVi
 }
 
 - (void)modelDidFailToLoad:(id)theModel {
-    if (theModel == self.detailsContext) {
+    if (theModel == self.object) {
         FTVCoreUser *user = self.object;
         NSLog(@"User %@ details failed to load", user.firstName);
         [self.friendDetailView fillWithModel:user];
