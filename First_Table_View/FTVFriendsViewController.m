@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Mykhailov Andrii. All rights reserved.
 //
 #import "FTVFriendsViewController.h"
-#import "FTVFriendDetailViewController.h"
 
 #import "FTVFriendsView.h"
 #import "FTVCell.h"
