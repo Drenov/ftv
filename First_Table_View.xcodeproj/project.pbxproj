@@ -12,9 +12,6 @@
 		7D1712A51924E6B000CD2CFC /* FTVImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1712A41924E6B000CD2CFC /* FTVImageModel.m */; };
 		7D23F5A1190E990000A17157 /* NSString+FTVExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D23F5A0190E990000A17157 /* NSString+FTVExtensions.m */; };
 		7D39D65D19556FE0003949EE /* UINavigationController+FTVExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D39D65C19556FE0003949EE /* UINavigationController+FTVExtensions.m */; };
-		7D39D66119557343003949EE /* FTVFriendDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D39D65F19557343003949EE /* FTVFriendDetailViewController.m */; };
-		7D39D66219557343003949EE /* FTVFriendDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D39D66019557343003949EE /* FTVFriendDetailViewController.xib */; };
-		7D39D665195573B7003949EE /* FTVFriendDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D39D664195573B7003949EE /* FTVFriendDetailView.m */; };
 		7D41EEE61976C6D300797864 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7D41EED91976C6D200797864 /* .gitignore */; };
 		7D41EEE71976C6D300797864 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 7D41EEDA1976C6D200797864 /* LICENSE */; };
 		7D41EEE81976C6D300797864 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7D41EEDB1976C6D200797864 /* README.md */; };
@@ -134,11 +131,6 @@
 		7D23F5A0190E990000A17157 /* NSString+FTVExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+FTVExtensions.m"; path = "First_Table_View/NSString+FTVExtensions.m"; sourceTree = "<group>"; };
 		7D39D65B19556FE0003949EE /* UINavigationController+FTVExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+FTVExtensions.h"; path = "First_Table_View/UINavigationController+FTVExtensions.h"; sourceTree = "<group>"; };
 		7D39D65C19556FE0003949EE /* UINavigationController+FTVExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+FTVExtensions.m"; path = "First_Table_View/UINavigationController+FTVExtensions.m"; sourceTree = "<group>"; };
-		7D39D65E19557343003949EE /* FTVFriendDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTVFriendDetailViewController.h; path = ../../First_Table_View/FTVFriendDetailViewController.h; sourceTree = "<group>"; };
-		7D39D65F19557343003949EE /* FTVFriendDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTVFriendDetailViewController.m; path = ../../First_Table_View/FTVFriendDetailViewController.m; sourceTree = "<group>"; };
-		7D39D66019557343003949EE /* FTVFriendDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FTVFriendDetailViewController.xib; path = ../../First_Table_View/FTVFriendDetailViewController.xib; sourceTree = "<group>"; };
-		7D39D663195573B7003949EE /* FTVFriendDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTVFriendDetailView.h; path = ../../First_Table_View/FTVFriendDetailView.h; sourceTree = "<group>"; };
-		7D39D664195573B7003949EE /* FTVFriendDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTVFriendDetailView.m; path = ../../First_Table_View/FTVFriendDetailView.m; sourceTree = "<group>"; };
 		7D41EED91976C6D200797864 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7D41EEDA1976C6D200797864 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		7D41EEDB1976C6D200797864 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -441,7 +433,6 @@
 				7D6A6956195C9CB80068BFF1 /* FTVViewController.m */,
 				7DA509D819586DBC0099BA5D /* FTVLoginViewController */,
 				7DA509D919586DD90099BA5D /* FTVFriendsViewController */,
-				7DA509DA19586DFD0099BA5D /* FTVFriendDetailViewController */,
 			);
 			name = "View Controllers";
 			path = src/Library;
@@ -470,18 +461,6 @@
 				7DA8A66F192B8BF50031A176 /* FTVCell */,
 			);
 			name = FTVFriendsViewController;
-			sourceTree = "<group>";
-		};
-		7DA509DA19586DFD0099BA5D /* FTVFriendDetailViewController */ = {
-			isa = PBXGroup;
-			children = (
-				7D39D65E19557343003949EE /* FTVFriendDetailViewController.h */,
-				7D39D65F19557343003949EE /* FTVFriendDetailViewController.m */,
-				7D39D66019557343003949EE /* FTVFriendDetailViewController.xib */,
-				7D39D663195573B7003949EE /* FTVFriendDetailView.h */,
-				7D39D664195573B7003949EE /* FTVFriendDetailView.m */,
-			);
-			name = FTVFriendDetailViewController;
 			sourceTree = "<group>";
 		};
 		7DA509DB19586EB80099BA5D /* Views */ = {
@@ -1007,7 +986,6 @@
 				7DA77B3C190FE7BF00DE338E /* img_004.jpg in Resources */,
 				7DAF47CC18FEA44E0084D346 /* Images.xcassets in Resources */,
 				7DAF47E918FEA4D40084D346 /* FTVFriendsViewController.xib in Resources */,
-				7D39D66219557343003949EE /* FTVFriendDetailViewController.xib in Resources */,
 				7DABC3471917C70700878FAB /* FTVCell.xib in Resources */,
 				7D41EEE71976C6D300797864 /* LICENSE in Resources */,
 				7D41EEE81976C6D300797864 /* README.md in Resources */,
@@ -1047,7 +1025,6 @@
 				7DA9D425191BBB85009F8F47 /* IDPShareObject.m in Sources */,
 				7DB71DAC191134910097208D /* FTVImageView.m in Sources */,
 				7DA509DE1958845C0099BA5D /* FTVFacebookContext.m in Sources */,
-				7D39D66119557343003949EE /* FTVFriendDetailViewController.m in Sources */,
 				7DA9D429191BBB85009F8F47 /* UIImage+IDPExtensions.m in Sources */,
 				7DA9D40E191BBB85009F8F47 /* IDPModel.m in Sources */,
 				7DBC630019549B3700D97805 /* FTVLoginViewController.m in Sources */,
@@ -1066,7 +1043,6 @@
 				7DA2049F195AF47A00CBC873 /* FTVView.m in Sources */,
 				7DA9D416191BBB85009F8F47 /* NSObject+IDPOCExtensions.m in Sources */,
 				7DA9D404191BBB85009F8F47 /* NSString+IDPExtensions.m in Sources */,
-				7D39D665195573B7003949EE /* FTVFriendDetailView.m in Sources */,
 				7DA9D41E191BBB85009F8F47 /* IDPURLConnection.m in Sources */,
 				7DA9D41D191BBB85009F8F47 /* IDPStackArray.m in Sources */,
 				7D41EEE91976C6D300797864 /* IDPCoreDataManager.m in Sources */,
