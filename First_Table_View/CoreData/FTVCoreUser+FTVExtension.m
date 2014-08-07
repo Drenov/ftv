@@ -29,6 +29,7 @@ static NSString *const kFTVUserIdPredicateFormat = @"userID = %@";
     NSArray *extendingObjects = [self extendingObjects];
     for (id object in extendingObjects) {
         [self relinquishExtensionWithObject:object];
+        [object release];
     }
 
     [super dealloc];
