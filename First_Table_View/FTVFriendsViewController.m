@@ -75,10 +75,20 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
     IDPNonatomicRetainPropertySynthesizeWithObserver(_loadContext, loadContext);
 }
 
+//- (void)setObject:(id<IDPModel>)object {
+//    self.loadingView = [IDPLoadingView loadingViewInView:self.view];
+//    FTVFacebookUsersContext *loadContext = [FTVFacebookUsersContext contextWithObject:self.object];
+//    self.loadContext = loadContext;
+//    [loadContext execute];
+//    
+//    [super setObject:object];
+//}
+
 #pragma mark -
 #pragma mark View Lifecycle
 
 - (void)viewDidLoad {
+#warning move this to setObject
     self.loadingView = [IDPLoadingView loadingViewInView:self.view];
     FTVFacebookUsersContext *loadContext = [FTVFacebookUsersContext contextWithObject:self.object];
     self.loadContext = loadContext;

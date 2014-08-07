@@ -17,6 +17,18 @@ static NSString *const kFTVUserIdPredicateFormat = @"userID = %@";
 @dynamic previewPicture;
 @dynamic picture;
 
+#pragma mark
+#pragma mark Initializations and Deallocations
+
+- (id)initWithEntity:(NSEntityDescription *)entity insertIntoManagedObjectContext:(NSManagedObjectContext *)context {
+    self = [super initWithEntity:entity insertIntoManagedObjectContext:context];
+    if (self) {
+        
+    }
+    
+    return self;
+}
+
 #pragma mark -
 #pragma mark Class Methods
 
