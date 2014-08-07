@@ -75,24 +75,36 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
     IDPNonatomicRetainPropertySynthesizeWithObserver(_loadContext, loadContext);
 }
 
-//- (void)setObject:(id<IDPModel>)object {
-//    self.loadingView = [IDPLoadingView loadingViewInView:self.view];
-//    FTVFacebookUsersContext *loadContext = [FTVFacebookUsersContext contextWithObject:self.object];
-//    self.loadContext = loadContext;
-//    [loadContext execute];
-//    
-//    [super setObject:object];
-//}
+- (void)setObject:(id<IDPModel>)object {
+    [super setObject:object];
+    self.loadContext = nil;
+    if (object) {
+        self.loadingView = [IDPLoadingView loadingViewInView:self.view];
+        FTVFacebookUsersContext *loadContext = [FTVFacebookUsersContext contextWithObject:object];
+        self.loadContext = loadContext;
+        [loadContext execute];
+    }
+}
+
+- (void)setLoadingView:(IDPLoadingView *)loadingView {
+    IDPNonatomicRetainPropertySynthesize(_loadingView, loadingView);
+    if (loadingView) {
+        NSLog(@"LoadingView started");
+
+    } else {
+        NSLog(@"LoadingView STOP");
+    }
+}
 
 #pragma mark -
 #pragma mark View Lifecycle
 
 - (void)viewDidLoad {
-#warning move this to setObject
-    self.loadingView = [IDPLoadingView loadingViewInView:self.view];
-    FTVFacebookUsersContext *loadContext = [FTVFacebookUsersContext contextWithObject:self.object];
-    self.loadContext = loadContext;
-    [loadContext execute];
+//#warning move this to setObject
+//    self.loadingView = [IDPLoadingView loadingViewInView:self.view];
+//    FTVFacebookUsersContext *loadContext = [FTVFacebookUsersContext contextWithObject:self.object];
+//    self.loadContext = loadContext;
+//    [loadContext execute];
     
     [super viewDidLoad];
 }

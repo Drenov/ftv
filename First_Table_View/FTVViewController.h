@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "IDPModel.h"
+#import "IDPModelProtocol.h"
 
 @interface FTVViewController : UIViewController
 @property (nonatomic, retain)       id<IDPModel>        object;
