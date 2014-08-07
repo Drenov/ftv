@@ -22,13 +22,13 @@
                                                        predicate:nil
                                                    prefetchPaths:nil];
     if (![reply count]) {
-        [self failLoading];
+        [self.object failLoading];
         
         return;
     }
     
     [(NSMutableArray *)self.object setArray:reply];
-    [self finishLoading];
+    [self.object finishLoading];
 }
 
 @end

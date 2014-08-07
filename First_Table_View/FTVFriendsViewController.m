@@ -13,6 +13,7 @@
 #import "FTVImageView.h"
 #import "FTVUserModels.h"
 #import "FTVCoreUser.h"
+#import "FTVCoreUser+FTVExtension.h"
 
 #import "IDPLoadingView.h"
 #import "UIAlertView+IDPExtensions.h"
@@ -210,32 +211,30 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
         self.readContext = nil;
     }
 }
-//
-//- (void)modelDidFailToLoad:(id)theModel {
-//    FTVLoginView *view = self.customView;
-//    if (theModel == self.loadContext) {
-//        NSLog(@"Users load failed, reading saved data");
-//        self.loadContext = nil;
-//        FTVUsersReadContext *readContext = [FTVUsersReadContext contextWithObject:self.usersModel];
-//        self.readContext = readContext;
-//        [readContext execute];
-//    }
-//
-//    if (theModel == self.readContext) {
-//        NSLog(@"Users read failed");
-//        [view.activityIndicator stopAnimating];
-//        [UIAlertView showErrorWithMessage:kFTVLoadingErrorMessage];
-//        self.readContext = nil;
-//    }
-//}
-//
-//- (void)modelDidCancelLoading:(id)theModel {
-//    if (theModel == self.loadContext) {
-//        NSLog(@"<<Users loading cancelled>>");
-//        FTVLoginView *view = self.customView;
-//        [view.activityIndicator stopAnimating];
-//        self.loadContext = nil;
-//    }
-//}
+
+- (void)modelDidFailToLoad:(id)theModel {
+    if (theModel == self.object) {
+        if (self.readContext) {
+            NSLog(@"User read failed");
+            [UIAlertView showErrorWithMessage:kFTVLoadingErrorMessage];
+            self.readContext = nil;
+            
+            return;
+        }
+        
+        NSLog(@"User load failed, reading saved data");
+        self.loadContext = nil;
+        FTVUsersReadContext *readContext = [FTVUsersReadContext contextWithObject:self.object];
+        self.readContext = readContext;
+        [readContext execute];
+    }
+}
+
+- (void)modelDidCancelLoading:(id)theModel {
+    if (theModel == self.object) {
+        NSLog(@"<<User loading cancelled>>");
+        self.loadContext = nil;
+    }
+}
 
 @end
