@@ -12,6 +12,7 @@
 #import "FTVCell.h"
 #import "FTVImageView.h"
 #import "FTVUserModels.h"
+#import "FTVCoreUser.h"
 
 #import "IDPLoadingView.h"
 #import "UIAlertView+IDPExtensions.h"
@@ -199,8 +200,11 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
 - (void)modelDidLoad:(id)theModel {
     if (theModel == self.object) {
         NSLog(@"<<Friends data did load>>");
-//        FTVLoginView *view = self.logi;
-//        self.usersModel = ((FTVUsersContext *)theModel).object;
+        FTVCoreUser *user = (FTVCoreUser *)theModel;
+        [self.userModels addObjects:user.friends];
+
+        [self.loadingView removeFromSuperview];
+        [self.tableView reloadData];
         
         self.loadContext = nil;
         self.readContext = nil;

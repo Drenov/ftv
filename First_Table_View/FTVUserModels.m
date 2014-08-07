@@ -48,14 +48,24 @@
 - (void)addObjects:(NSSet *)users {
     id syncObject = self.mutableObjects;
 	@synchronized(syncObject) {
-        
+        NSArray *newFriends = [[[users allObjects] copy] autorelease];
+        for (id friend in newFriends) {
+            if (![syncObject containsObject:friend]) {
+                [syncObject addObject:friend];
+            }
+        }
     }
 }
 
 - (void)removeObjects:(NSSet *)users {
     id syncObject = self.mutableObjects;
 	@synchronized(syncObject) {
-        
+        NSArray *oldFriends = [[[users allObjects] copy] autorelease];
+        for (id friend in oldFriends) {
+            if ([syncObject containsObject:friend]) {
+                [syncObject removeObject:friend];
+            }
+        }
     }
 }
 
