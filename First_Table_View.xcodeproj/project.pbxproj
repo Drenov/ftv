@@ -15,7 +15,6 @@
 		7D39D66119557343003949EE /* FTVFriendDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D39D65F19557343003949EE /* FTVFriendDetailViewController.m */; };
 		7D39D66219557343003949EE /* FTVFriendDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D39D66019557343003949EE /* FTVFriendDetailViewController.xib */; };
 		7D39D665195573B7003949EE /* FTVFriendDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D39D664195573B7003949EE /* FTVFriendDetailView.m */; };
-		7D39D6681955AE90003949EE /* FTVFacebookUserDetailsContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D39D6671955AE90003949EE /* FTVFacebookUserDetailsContext.m */; };
 		7D41EEE61976C6D300797864 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7D41EED91976C6D200797864 /* .gitignore */; };
 		7D41EEE71976C6D300797864 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 7D41EEDA1976C6D200797864 /* LICENSE */; };
 		7D41EEE81976C6D300797864 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7D41EEDB1976C6D200797864 /* README.md */; };
@@ -140,8 +139,6 @@
 		7D39D66019557343003949EE /* FTVFriendDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FTVFriendDetailViewController.xib; path = ../../First_Table_View/FTVFriendDetailViewController.xib; sourceTree = "<group>"; };
 		7D39D663195573B7003949EE /* FTVFriendDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FTVFriendDetailView.h; path = ../../First_Table_View/FTVFriendDetailView.h; sourceTree = "<group>"; };
 		7D39D664195573B7003949EE /* FTVFriendDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FTVFriendDetailView.m; path = ../../First_Table_View/FTVFriendDetailView.m; sourceTree = "<group>"; };
-		7D39D6661955AE8F003949EE /* FTVFacebookUserDetailsContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTVFacebookUserDetailsContext.h; sourceTree = "<group>"; };
-		7D39D6671955AE90003949EE /* FTVFacebookUserDetailsContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTVFacebookUserDetailsContext.m; sourceTree = "<group>"; };
 		7D41EED91976C6D200797864 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7D41EEDA1976C6D200797864 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		7D41EEDB1976C6D200797864 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -421,8 +418,6 @@
 				7DA5F3F7195989B7004A1556 /* Abstract superclasses */,
 				7D8EF8711941D0CA00B4AD02 /* FTVFacebookUsersContext.h */,
 				7D8EF8721941D0CA00B4AD02 /* FTVFacebookUsersContext.m */,
-				7D39D6661955AE8F003949EE /* FTVFacebookUserDetailsContext.h */,
-				7D39D6671955AE90003949EE /* FTVFacebookUserDetailsContext.m */,
 				7DBC62F519547E8200D97805 /* FTVUsersReadContext.h */,
 				7DBC62F619547E8200D97805 /* FTVUsersReadContext.m */,
 			);
@@ -1089,7 +1084,6 @@
 				7D41EEEC1976C6D300797864 /* NSManagedObjectID+IDPExtensions.m in Sources */,
 				7DA9D40B191BBB85009F8F47 /* IDPKVOContext.m in Sources */,
 				7D6A6959195C9CB80068BFF1 /* FTVViewController.m in Sources */,
-				7D39D6681955AE90003949EE /* FTVFacebookUserDetailsContext.m in Sources */,
 				7D41EEEA1976C6D300797864 /* NSManagedObject+IDPExtensions.m in Sources */,
 				7DA9D41A191BBB85009F8F47 /* IDPRetainingReference.m in Sources */,
 				7DA9D413191BBB85009F8F47 /* IDPOCContext.m in Sources */,
