@@ -57,6 +57,7 @@ NSString* graphObjectPictureUrl (FBGraphObject<FBGraphUser> *graphUser) {
 
 - (void)cancel {
     self.request = nil;
+    [self.object cancel];
     [super cancel];
 }
 
@@ -71,7 +72,7 @@ NSString* graphObjectPictureUrl (FBGraphObject<FBGraphUser> *graphUser) {
             NSLog(@"Connection succesfull. Transfering detail facebook response");
             [self fillObjectWithFacebookData:result];
             FTVPerformBlockOnMainQueue(^{
-                [self finishLoading];
+                [self.object finishLoading];
             });
         } else {
             NSLog(@"Facebook connection failed");
@@ -94,7 +95,7 @@ NSString* graphObjectPictureUrl (FBGraphObject<FBGraphUser> *graphUser) {
     }
     
     NSLog(@"%@ request error  - %@", [self class], error);
-    [self failLoading];
+    [self.object failLoading];
 }
 
 #pragma mark -

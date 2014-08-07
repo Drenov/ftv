@@ -72,7 +72,7 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
         [_loadContext cancel];
     }
 
-    IDPNonatomicRetainPropertySynthesizeWithObserver(_loadContext, loadContext);
+    IDPNonatomicRetainPropertySynthesize(_loadContext, loadContext);
 }
 
 - (void)setObject:(id<IDPModel>)object {
