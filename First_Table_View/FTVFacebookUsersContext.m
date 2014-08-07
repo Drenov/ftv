@@ -11,8 +11,6 @@
 #import "FTVCoreUser+FTVExtension.h"
 #import "NSObject+IDPExtensions.h"
 
-#define kFTVFBGraphUserPictureUrlPath [@"picture"][@"data"][@"url"];
-
 static	NSString *const	kFTVFBRequestConnectionResultField = @"data";
 static	NSString *const	kFTVFBGraphPathRequest = @"/friends?fields=first_name,last_name,picture.type(small)";
 
@@ -31,9 +29,7 @@ static	NSString *const	kFTVFBGraphPathRequest = @"/friends?fields=first_name,las
     FTVCoreUser *user = [FTVCoreUser userWithId:graphUser.objectID];
     user.firstName = graphUser.first_name;
     user.lastName = graphUser.last_name;
-//    user.previewPicturePath = graphUser kFTVFBGraphUserPictureUrlPath;
-//    NSString *path = myfync(graphUser);
-//    user.previewPicturePath = graphObjectPictureUrl(graphUser);
+    user.previewPicturePath = graphObjectPictureUrl(graphUser);
     NSLog(@"Transferred user %@", user.userID);
     [user saveManagedObject];
     

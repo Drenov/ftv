@@ -68,7 +68,7 @@ NSString* graphObjectPictureUrl (FBGraphObject<FBGraphUser> *graphUser) {
     
     FBRequestHandler = ^(FBRequestConnection *connection,id result,NSError *error) {
         if (!error) {
-            NSLog(@"Transfering detail facebook response to user");
+            NSLog(@"Connection succesfull. Transfering detail facebook response");
             [self fillObjectWithFacebookData:result];
             FTVPerformBlockOnMainQueue(^{
                 [self finishLoading];
