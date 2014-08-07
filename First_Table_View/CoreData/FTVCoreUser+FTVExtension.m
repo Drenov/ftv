@@ -19,11 +19,20 @@ static NSString *const kFTVUserIdPredicateFormat = @"userID = %@";
 
 @implementation FTVCoreUser (FTVExtension)
 
-@dynamic previewPicture;
 @dynamic picture;
+@dynamic previewPicture;
 
 #pragma mark
 #pragma mark Initializations and Deallocations
+
+- (void)dealloc {
+    NSArray *extendingObjects = [self extendingObjects];
+    for (id object in extendingObjects) {
+        [self relinquishExtensionWithObject:object];
+    }
+
+    [super dealloc];
+}
 
 - (id)initWithEntity:(NSEntityDescription *)entity insertIntoManagedObjectContext:(NSManagedObjectContext *)context {
     self = [super initWithEntity:entity insertIntoManagedObjectContext:context];

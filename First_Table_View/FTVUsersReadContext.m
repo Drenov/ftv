@@ -27,7 +27,7 @@ static NSString *const kFTVUserIdPredicateFormat = @"userID = %@";
                                                    prefetchPaths:nil];
     FTVCoreUser *user = [reply lastObject];
     if (![[user.friends allObjects] count]) {
-    [self.object failLoading];
+        [self.object failLoading];
         
         return;
     }
