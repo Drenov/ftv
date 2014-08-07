@@ -10,6 +10,17 @@
 #import "FTVBlock.h"
 #import "IDPPropertyMacros.h"
 
+static	NSString *const	kFTVGraphObjectPathForPicture = @"picture";
+static	NSString *const	kFTVGraphObjectPathForData = @"data";
+static	NSString *const	kFTVGraphObjectPathForUrl = @"url";
+
+NSString* graphObjectPictureUrl (FBGraphObject<FBGraphUser> *graphUser) {
+    NSString *url = graphUser   [kFTVGraphObjectPathForPicture]
+                                [kFTVGraphObjectPathForData]
+                                [kFTVGraphObjectPathForUrl];
+    return url;
+}
+
 @interface FTVFacebookContext ()
 @property (nonatomic, retain)       FBRequestConnection     *request;
 

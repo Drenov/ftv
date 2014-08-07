@@ -26,6 +26,7 @@ static NSString *const kFTVUserIdPredicateFormat = @"userID = %@";
                                                        predicate:predicate
                                                    prefetchPaths:nil];
     FTVCoreUser *user = [reply lastObject];
+//    [user.friends allObjects];
     if (!user) {
         user = [FTVCoreUser managedObject];
         user.userID = userId;

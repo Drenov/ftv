@@ -67,6 +67,14 @@ static	NSString *const	kFTVLoadingErrorMessage = @"No saved data found. Try agai
 
 IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
 
+- (void)setLoadContext:(FTVFacebookUsersContext *)loadContext {
+    if (loadContext != _loadContext) {
+        [_loadContext cancel];
+    }
+
+    IDPNonatomicRetainPropertySynthesizeWithObserver(_loadContext, loadContext);
+}
+
 #pragma mark -
 #pragma mark View Lifecycle
 

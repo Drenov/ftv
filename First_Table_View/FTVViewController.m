@@ -17,8 +17,8 @@
     [super dealloc];
 }
 
-- (void)setObject:(id)object {
-    IDPNonatomicRetainPropertySynthesizeWithObserver(_object, object);
-}
+//- (void)setObject:(id)object {
+//    IDPNonatomicRetainPropertySynthesizeWithObserver(_object, object);
+//}
 
 @end

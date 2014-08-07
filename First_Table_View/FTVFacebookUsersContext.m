@@ -14,9 +14,7 @@
 #define kFTVFBGraphUserPictureUrlPath [@"picture"][@"data"][@"url"];
 
 static	NSString *const	kFTVFBRequestConnectionResultField = @"data";
-static	NSString *const	kFTVFBRequestConnectionGraphPathRequest = @"/me/friends?fields=first_name,last_name, picture.type(small)";
-
-
+static	NSString *const	kFTVFBGraphPathRequest = @"/friends?fields=first_name,last_name,picture.type(small)";
 
 @interface FTVFacebookUsersContext()
 
@@ -33,7 +31,9 @@ static	NSString *const	kFTVFBRequestConnectionGraphPathRequest = @"/me/friends?f
     FTVCoreUser *user = [FTVCoreUser userWithId:graphUser.objectID];
     user.firstName = graphUser.first_name;
     user.lastName = graphUser.last_name;
-    user.previewPicturePath = graphUser kFTVFBGraphUserPictureUrlPath;
+//    user.previewPicturePath = graphUser kFTVFBGraphUserPictureUrlPath;
+//    NSString *path = myfync(graphUser);
+//    user.previewPicturePath = graphObjectPictureUrl(graphUser);
     NSLog(@"Transferred user %@", user.userID);
     [user saveManagedObject];
     
@@ -46,16 +46,19 @@ static	NSString *const	kFTVFBRequestConnectionGraphPathRequest = @"/me/friends?f
 - (void)fillObjectWithFacebookData:(FBGraphObject<FBGraphUser> *)data {
     NSArray *usersData = data[kFTVFBRequestConnectionResultField];
     NSLog(@"Filling users with facebook data");
-    NSMutableArray *users = self.object;
+    FTVCoreUser *currentUser = self.object;;
     FTVCoreUser *user = nil;
     for (FBGraphObject<FBGraphUser> *graphUser in usersData) {
         user = [self userFromFBGraphUser:graphUser];
-        [users addObject:user];
+        [currentUser addFriendsObject:user];
     }
 }
 
 - (NSString * )graphPath {
-    return kFTVFBRequestConnectionGraphPathRequest;
+    FTVCoreUser *user = (FTVCoreUser *)self.object;
+    NSString *graphPath = [NSString stringWithFormat:@"%@%@", user.userID, kFTVFBGraphPathRequest];
+    
+    return graphPath;
 }
 
 @end

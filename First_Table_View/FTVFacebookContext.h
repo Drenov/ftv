@@ -8,6 +8,8 @@
 
 #import "FTVUsersContext.h"
 
+extern NSString* graphObjectPictureUrl (FBGraphObject<FBGraphUser> *graphUser);
+
 @protocol FTVFacebookContextProtocol <NSObject>
 
 @required
