@@ -8,10 +8,11 @@
 
 #import "FTVCoreUser.h"
 #import "IDPActiveRecordKit.h"
+#import "IDPModelProtocol.h"
 
 @class FTVImageModel;
 
-@interface FTVCoreUser (FTVExtension)
+@interface FTVCoreUser (FTVExtension) <IDPModel>
 @property (nonatomic, readonly)     FTVImageModel       *previewPicture;
 @property (nonatomic, readonly)     FTVImageModel       *picture;
 

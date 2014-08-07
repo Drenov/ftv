@@ -10,6 +10,11 @@
 #import "FTVImageModel.h"
 #import "IDPActiveRecordKit.h"
 
+#import "IDPModel.h"
+#import "IDPModelMixin.h"
+#import "NSObject+IDPExtensions.h"
+#import "NSObject+IDPOCExtensions.h"
+
 static NSString *const kFTVUserIdPredicateFormat = @"userID = %@";
 
 @implementation FTVCoreUser (FTVExtension)
@@ -23,7 +28,8 @@ static NSString *const kFTVUserIdPredicateFormat = @"userID = %@";
 - (id)initWithEntity:(NSEntityDescription *)entity insertIntoManagedObjectContext:(NSManagedObjectContext *)context {
     self = [super initWithEntity:entity insertIntoManagedObjectContext:context];
     if (self) {
-        
+        [self extendWithObject:[IDPModel object]];
+        [self extendWithObject:[IDPModelMixin modelWithTarget:self]];
     }
     
     return self;
