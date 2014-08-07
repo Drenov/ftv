@@ -10,6 +10,8 @@
 #import "FTVCoreUser.h"
 #import "IDPActiveRecordKit.h"
 
+static NSString *const kFTVUserIdPredicateFormat = @"userID = %@";
+
 @class FTVCoreUser;
 
 @implementation FTVUsersReadContext
@@ -18,16 +20,17 @@
 #pragma mark Public Methods
 
 - (void)execute {
+    NSString *userId = ((FTVCoreUser *)self.object).userID;
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:kFTVUserIdPredicateFormat, userId];
     NSArray *reply = [FTVCoreUser fetchEntityWithSortDescriptors:nil
-                                                       predicate:nil
+                                                       predicate:predicate
                                                    prefetchPaths:nil];
-    if (![reply count]) {
-        [self.object failLoading];
+    FTVCoreUser *user = [reply lastObject];
+    if (![[user.friends allObjects] count]) {
+    [self.object failLoading];
         
         return;
     }
-    
-//    [(NSMutableArray *)self.object setArray:reply];
     
     [self.object finishLoading];
 }
