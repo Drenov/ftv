@@ -34,6 +34,8 @@ static	NSString *const	kFTVLoadingErrorMessage = @"No saved data found. Try agai
 @property (nonatomic, retain)           FTVFacebookUsersContext     *loadContext;
 @property (nonatomic, retain)           FTVUsersReadContext         *readContext;
 
+- (void)cleanContexts;
+
 @end
 
 @implementation FTVFriendsViewController
@@ -78,7 +80,7 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
 
 - (void)setObject:(id<IDPModel>)object {
     [super setObject:object];
-    self.loadContext = nil;
+    [self cleanContexts];
     [self.userModels removeAllObjects];
     if (object) {
         self.loadingView = [IDPLoadingView loadingViewInView:self.view];
@@ -99,6 +101,14 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
 - (void)didReceiveMemoryWarning {
     
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark -
+#pragma mark UI Private Methods
+
+- (void)cleanContexts {
+    self.loadContext = nil;
+    self.readContext = nil;
 }
 
 #pragma mark -
@@ -189,8 +199,7 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
         [self.loadingView removeFromSuperview];
         [self.tableView reloadData];
         
-        self.loadContext = nil;
-        self.readContext = nil;
+        [self cleanContexts];
     }
 }
 
@@ -199,13 +208,13 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
         if (self.readContext) {
             NSLog(@"User read failed");
             [UIAlertView showErrorWithMessage:kFTVLoadingErrorMessage];
-            self.readContext = nil;
+            [self cleanContexts];
             
             return;
         }
         
         NSLog(@"User load failed, reading saved data");
-        self.loadContext = nil;
+        [self cleanContexts];
         FTVUsersReadContext *readContext = [FTVUsersReadContext contextWithObject:self.object];
         self.readContext = readContext;
         [readContext execute];
@@ -215,7 +224,7 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
 - (void)modelDidCancelLoading:(id)theModel {
     if (theModel == self.object) {
         NSLog(@"<<User loading cancelled>>");
-        self.loadContext = nil;
+        [self cleanContexts];
     }
 }
 
