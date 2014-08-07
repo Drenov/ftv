@@ -19,8 +19,8 @@ static	NSString *const	kFTVReadPermissionUserFriends = @"user_friends";
 static	NSString *const	kFTVReadPermissionUserHometown = @"user_hometown";
 
 @interface FTVLoginViewController ()
-@property (nonatomic, readonly)         FTVLoginView                *loginView;
-@property (nonatomic, retain)           FTVCoreUser                 *loggedInUser;
+@property (nonatomic, readonly)         FTVLoginView            *loginView;
+@property (nonatomic, retain)           FTVCoreUser             *loggedInUser;
 
 - (NSArray *)readPermissions;
 - (FTVCoreUser *)userFromFBGraphUser:(FBGraphObject<FBGraphUser> *)graphUser;

@@ -89,16 +89,6 @@ IDPViewControllerViewOfClassGetterSynthesize(FTVFriendsView, friendsView);
     }
 }
 
-- (void)setLoadingView:(IDPLoadingView *)loadingView {
-    IDPNonatomicRetainPropertySynthesize(_loadingView, loadingView);
-    if (loadingView) {
-        NSLog(@"LoadingView started");
-
-    } else {
-        NSLog(@"LoadingView STOP");
-    }
-}
-
 #pragma mark -
 #pragma mark View Lifecycle
 
